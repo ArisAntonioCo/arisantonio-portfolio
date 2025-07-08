@@ -4,14 +4,14 @@ export const PhilosophySection = () => {
       <div className="w-full px-4 sm:px-5 lg:px-6 py-8 sm:py-12 lg:py-16">
         <div className="max-w-7xl mx-auto">
           {/* Main Quote */}
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal mb-8 max-w-4xl">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-normal mb-6 sm:mb-8 max-w-4xl">
             <span className="text-light">&ldquo;Stay on track,</span>
             <span className="text-[#8C8C8C]"> move forward with purpose, and carry others smoothly on the journey.&rdquo;</span>
           </h2>
 
-          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
+          <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-12 items-start">
             {/* Philosophy Text */}
-            <div className="flex-1 space-y-6 text-base sm:text-lg">
+            <div className="flex-1 space-y-4 sm:space-y-6 text-sm sm:text-base md:text-lg">
               <p className="text-[#8C8C8C] leading-relaxed">
                 Trains are steady, intentional, and reliable. They don&apos;t rush like cars or fly like planes—but they always arrive.
               </p>
@@ -22,7 +22,7 @@ export const PhilosophySection = () => {
             </div>
 
             {/* Small Video Container */}
-            <div className="w-full lg:w-96 h-64 relative rounded-2xl overflow-hidden bg-dark/50">
+            <div className="w-full sm:w-3/4 md:w-2/3 lg:w-96 h-48 sm:h-56 md:h-64 relative rounded-xl sm:rounded-2xl overflow-hidden bg-dark/50 mx-auto lg:mx-0">
               <video
                 autoPlay
                 loop

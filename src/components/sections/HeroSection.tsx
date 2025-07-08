@@ -16,26 +16,26 @@ export const HeroSection = () => {
         </div>
         
         {/* Bottom Content */}
-        <div className="shrink-0 flex justify-between items-stretch gap-8">
+        <div className="shrink-0 flex flex-col lg:flex-row justify-between items-stretch gap-4 sm:gap-6 lg:gap-8">
           {/* Left Content */}
           <div className="flex-1">
             {/* CTA */}
             <a 
               href="#contact"
-              className="inline-flex items-center gap-2 text-light hover:text-accent transition-colors mb-4"
+              className="inline-flex items-center gap-1.5 sm:gap-2 text-light hover:text-accent transition-colors mb-3 sm:mb-4"
             >
-              <span className="text-sm">Let&apos;s Talk</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <span className="text-xs sm:text-sm">Let&apos;s Talk</span>
+              <svg width="14" height="14" className="sm:w-4 sm:h-4" viewBox="0 0 24 24" fill="none">
                 <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </a>
             
             {/* Headline */}
-            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-normal mb-4">
+            <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-normal mb-3 sm:mb-4">
               <span className="text-light">Aris Antonio</span>
-              <span className="text-[#8C8C8C] whitespace-nowrap"> brings ideas to life</span>
-              <br/>
-              <span className="text-[#8C8C8C] whitespace-nowrap">through code and intuitive design</span>
+              <span className="text-[#8C8C8C]"> brings ideas to life</span>
+              <br className="hidden sm:block"/>
+              <span className="text-[#8C8C8C]"> through code and intuitive design</span>
             </h1>
             
             {/* Social Links */}
@@ -86,7 +86,7 @@ export const HeroSection = () => {
               playsInline
               className="absolute inset-0 w-full h-full object-cover"
             >
-              <source src="/videos/FillerVideo1.mp4" type="video/mp4" />
+              <source src="/videos/FillerVideo.mp4" type="video/mp4" />
             </video>
           </div>
         </div>

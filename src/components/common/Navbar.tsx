@@ -63,20 +63,21 @@ export const Navbar = () => {
     <nav className="relative z-50 px-6 sm:px-8 lg:px-12 py-4 sm:py-5">
       <div className="flex items-center justify-between">
         {/* Logo/Name */}
-        <Link href="/" className="text-light font-normal text-lg hover:text-accent transition-colors">
+        <Link href="/" className="text-light font-normal text-base sm:text-lg hover:text-accent transition-colors">
           Aris Antonio
         </Link>
 
         {/* Right side container */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
           {/* Time and Status */}
           {currentTime && (
-            <div className="bg-white/5 backdrop-blur-[10px] border border-white/10 rounded-full px-4 py-1 flex items-center gap-2">
+            <div className="bg-white/5 backdrop-blur-[10px] border border-white/10 rounded-full px-2 sm:px-3 md:px-4 py-1 flex items-center gap-1 sm:gap-2">
               <div className={cn(
-                "w-1.5 h-1.5 rounded-full",
-                isAvailable ? "bg-green-500" : "bg-[#FF5500]"
+                "w-1.5 h-1.5 rounded-full flex-shrink-0 transition-opacity duration-100",
+                isAvailable ? "bg-green-500" : "bg-[#FF5500]",
+                showColon ? "opacity-100" : "opacity-0"
               )} />
-              <span className="text-light text-sm" style={{ fontFamily: 'NeuePixelGrotesk, monospace' }}>
+              <span className="text-light text-xs sm:text-sm" style={{ fontFamily: 'NeuePixelGrotesk, monospace' }}>
                 {currentTime && (() => {
                   const time = formatTime(currentTime);
                   if (typeof time === 'string') return time;
@@ -87,13 +88,14 @@ export const Navbar = () => {
                         "transition-opacity duration-100",
                         showColon ? "opacity-100" : "opacity-0"
                       )}>:</span>
-                      {time.minutes} {time.period} (GMT+8)
+                      {time.minutes} {time.period}
+                      <span className="hidden sm:inline"> (GMT+8)</span>
                     </>
                   );
                 })()}
               </span>
               <span className={cn(
-                "text-sm",
+                "text-xs sm:text-sm",
                 isAvailable ? "text-green-400" : "text-[#FF5500]"
               )} style={{ fontFamily: 'NeuePixelGrotesk, monospace' }}>
                 {isAvailable ? "Available" : "Unavailable"}
@@ -125,11 +127,11 @@ export const Navbar = () => {
       {/* Dropdown Menu */}
       <div
         className={cn(
-          "absolute right-6 sm:right-8 lg:right-12 top-full mt-4 bg-white/5 backdrop-blur-[10px] border border-white/10 rounded-2xl overflow-hidden transition-all duration-300 min-w-[200px]",
+          "absolute right-4 sm:right-6 md:right-8 lg:right-12 top-full mt-2 sm:mt-4 bg-white/5 backdrop-blur-[10px] border border-white/10 rounded-xl sm:rounded-2xl overflow-hidden transition-all duration-300 min-w-[180px] sm:min-w-[200px]",
           isOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4 pointer-events-none"
         )}
       >
-        <div className="p-6 space-y-4">
+        <div className="p-4 sm:p-6 space-y-3 sm:space-y-4">
           {navLinks.map((link) => (
             <Link
               key={link.href}
