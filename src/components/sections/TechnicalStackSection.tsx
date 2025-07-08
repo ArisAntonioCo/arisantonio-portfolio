@@ -1,4 +1,57 @@
-import StackIcon from 'tech-stack-icons';
+"use client";
+
+import dynamic from 'next/dynamic';
+import { memo, Suspense, useEffect, useRef, useState } from 'react';
+
+// Dynamically import StackIcon to reduce initial bundle size
+const StackIcon = dynamic(() => import('tech-stack-icons'), {
+  loading: () => <div className="w-4 h-4 bg-white/10 rounded animate-pulse" />,
+  ssr: false
+});
+
+// Memoize the tech badge component to prevent unnecessary re-renders
+const TechBadge = memo(({ tech }: { tech: { name: string; iconName: string; label: string } }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      className="flex items-center gap-2 px-3 py-1.5 bg-white/5 backdrop-blur-[10px] border border-white/10 rounded-lg hover:bg-white/10 transition-colors"
+    >
+      <div className="w-4 h-4">
+        {isVisible ? (
+          <Suspense fallback={<div className="w-4 h-4 bg-white/10 rounded animate-pulse" />}>
+            <StackIcon name={tech.iconName} />
+          </Suspense>
+        ) : (
+          <div className="w-4 h-4 bg-white/10 rounded animate-pulse" />
+        )}
+      </div>
+      <span className="text-xs text-white font-normal">{tech.label}</span>
+    </div>
+  );
+});
+
+TechBadge.displayName = 'TechBadge';
 
 const techStack = [
   { name: 'Adobe Illustrator', iconName: 'ai', label: 'Adobe Illustrator' },
@@ -58,15 +111,7 @@ export const TechnicalStackSection = () => {
         {/* Tech Stack Badges */}
         <div className="flex flex-wrap gap-2">
           {techStack.map((tech) => (
-            <div
-              key={tech.name}
-              className="flex items-center gap-2 px-3 py-1.5 bg-white/5 backdrop-blur-[10px] border border-white/10 rounded-lg hover:bg-white/10 transition-colors"
-            >
-              <div className="w-4 h-4">
-                <StackIcon name={tech.iconName} />
-              </div>
-              <span className="text-xs text-white font-normal">{tech.label}</span>
-            </div>
+            <TechBadge key={tech.name} tech={tech} />
           ))}
         </div>
       </div>

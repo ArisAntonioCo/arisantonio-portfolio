@@ -5,19 +5,19 @@ export const PhilosophySection = () => {
         <div className="max-w-7xl mx-auto">
           {/* Main Quote */}
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal mb-8 max-w-4xl">
-            <span className="text-light">"Stay on track,</span>
-            <span className="text-[#8C8C8C]"> move forward with purpose, and carry others smoothly on the journey."</span>
+            <span className="text-light">&ldquo;Stay on track,</span>
+            <span className="text-[#8C8C8C]"> move forward with purpose, and carry others smoothly on the journey.&rdquo;</span>
           </h2>
 
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
             {/* Philosophy Text */}
             <div className="flex-1 space-y-6 text-base sm:text-lg">
               <p className="text-[#8C8C8C] leading-relaxed">
-                Trains are steady, intentional, and reliable. They don't rush like cars or fly like planes—but they always arrive.
+                Trains are steady, intentional, and reliable. They don&apos;t rush like cars or fly like planes—but they always arrive.
               </p>
               
               <p className="text-light leading-relaxed">
-                Similarly, great UI/UX and frontend development isn't about shortcuts—it's about consistency, user-centric flow, and clear direction.
+                Similarly, great UI/UX and frontend development isn&apos;t about shortcuts—it&apos;s about consistency, user-centric flow, and clear direction.
               </p>
             </div>
 
