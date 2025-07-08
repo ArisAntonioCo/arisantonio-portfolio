@@ -1,0 +1,1 @@
+Adobe Illustrator (ai), Adobe Photoshop, Figma, aistudio, mysql, anthropic, bash, tailwindcss, claude, cline, postman, copilotgithub, css3, html5, gemini, git, github, java, javascript (js), typescript, laravel, mongodb, n8n, make, zapier, nextjs2, notion, slack, openai, perplexity, postgresql, postman, supabase, react, redux, replit, resend, shadcnui, vercel, v0. 
