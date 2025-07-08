@@ -35,12 +35,6 @@
 - Interaction Design
 - Usability Testing
 
-#### 3.3 Soft Skills
-- Problem Solving
-- Communication
-- Team Collaboration
-- Project Management
-
 ### 4. Services
 - UI/UX Design
   - User Research
