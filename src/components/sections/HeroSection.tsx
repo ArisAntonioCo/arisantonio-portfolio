@@ -1,6 +1,6 @@
 export const HeroSection = () => {
   return (
-    <section className="flex-1 bg-dark overflow-hidden flex flex-col">
+    <section className="h-[calc(100vh-76px)] bg-dark overflow-hidden flex flex-col">
       <div className="flex-1 flex flex-col px-4 sm:px-5 lg:px-6 pb-4 sm:pb-5 lg:pb-6 gap-4 sm:gap-5 lg:gap-6">
         {/* Video Container */}
         <div className="flex-1 relative rounded-2xl sm:rounded-3xl overflow-hidden bg-dark/50 min-h-0">

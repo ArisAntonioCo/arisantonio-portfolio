@@ -9,15 +9,25 @@
 - Social Links
 - Availability Status
 
-### 2. About
+### 2. Philosophy/Approach (Train Metaphor Section)
+- Main Message: "Stay on track, move forward with purpose, and carry others smoothly on the journey."
+- Philosophy Statement
+- Visual Metaphor (Train Video Background)
+- Core Principles:
+  - Steady & Intentional
+  - Reliable & Consistent
+  - User-Centric Flow
+  - Clear Direction
+
+### 3. About
 - Professional Summary
 - Core Values/Philosophy
 - Work Approach
 - Personal Interests (Optional)
 - Resume/CV Download
 
-### 3. Skills & Expertise
-#### 3.1 Technical Skills
+### 4. Skills & Expertise
+#### 4.1 Technical Skills
 - Frontend Technologies
   - Languages
   - Frameworks/Libraries
@@ -28,14 +38,14 @@
   - Prototyping Tools
   - Collaboration Tools
   
-#### 3.2 Design Skills
+#### 4.2 Design Skills
 - User Research
 - Information Architecture
 - Visual Design
 - Interaction Design
 - Usability Testing
 
-### 4. Services
+### 5. Services
 - UI/UX Design
   - User Research
   - Wireframing
@@ -49,8 +59,8 @@
   - Performance Optimization
   - Accessibility Implementation
 
-### 5. Work/Projects
-#### 5.1 Featured Projects
+### 6. Work/Projects
+#### 6.1 Featured Projects
 - Project Card
   - Title
   - Category/Type
@@ -62,14 +72,14 @@
   - Case Study Link
   - GitHub Link (if applicable)
 
-#### 5.2 Project Categories
+#### 6.2 Project Categories
 - UI/UX Case Studies
 - Frontend Development Projects
 - Full-Stack Applications
 - Open Source Contributions
 - Experimental/Personal Projects
 
-#### 5.3 Project Details Page
+#### 6.3 Project Details Page
 - Project Overview
 - Problem Statement
 - Research & Discovery
@@ -87,7 +97,7 @@
 - Lessons Learned
 - Next Steps
 
-### 6. Process/Workflow
+### 7. Process/Workflow
 - Discovery Phase
 - Research & Analysis
 - Design Phase
@@ -95,18 +105,18 @@
 - Testing & Iteration
 - Launch & Maintenance
 
-### 7. Testimonials/Reviews
+### 8. Testimonials/Reviews
 - Client Testimonials
 - Colleague Recommendations
 - Project Success Metrics
 
-### 8. Blog/Resources (Optional)
+### 9. Blog/Resources (Optional)
 - Technical Articles
 - Design Insights
 - Tutorials
 - Industry Thoughts
 
-### 9. Contact
+### 10. Contact
 - Contact Form
 - Email
 - Phone (Optional)
@@ -118,25 +128,25 @@
 
 ## Additional Sections (Optional)
 
-### 10. Experience Timeline
+### 11. Experience Timeline
 - Work History
 - Education
 - Certifications
 - Achievements
 
-### 11. Tools & Tech Stack
+### 12. Tools & Tech Stack
 - Design Tools Proficiency
 - Development Environment
 - Preferred Tech Stack
 - Learning Currently
 
-### 12. FAQ
+### 13. FAQ
 - Working Process
 - Pricing Information
 - Timeline Expectations
 - Collaboration Methods
 
-### 13. Call-to-Action Footer
+### 14. Call-to-Action Footer
 - Quick Links
 - Newsletter Signup
 - Social Media
