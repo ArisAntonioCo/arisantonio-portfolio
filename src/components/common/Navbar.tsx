@@ -73,10 +73,10 @@ export const Navbar = () => {
           {currentTime && (
             <div className="bg-white/5 backdrop-blur-[10px] border border-white/10 rounded-full px-4 py-1 flex items-center gap-2">
               <div className={cn(
-                "w-2 h-2 rounded-full",
+                "w-1.5 h-1.5 rounded-full",
                 isAvailable ? "bg-green-500" : "bg-[#FF5500]"
               )} />
-              <span className="text-light text-sm">
+              <span className="text-light text-sm" style={{ fontFamily: 'NeuePixelGrotesk, monospace' }}>
                 {currentTime && (() => {
                   const time = formatTime(currentTime);
                   if (typeof time === 'string') return time;
@@ -87,7 +87,7 @@ export const Navbar = () => {
                         "transition-opacity duration-100",
                         showColon ? "opacity-100" : "opacity-0"
                       )}>:</span>
-                      {time.minutes} {time.period} PHT
+                      {time.minutes} {time.period} (GMT+8)
                     </>
                   );
                 })()}
@@ -95,7 +95,7 @@ export const Navbar = () => {
               <span className={cn(
                 "text-sm",
                 isAvailable ? "text-green-400" : "text-[#FF5500]"
-              )}>
+              )} style={{ fontFamily: 'NeuePixelGrotesk, monospace' }}>
                 {isAvailable ? "Available" : "Unavailable"}
               </span>
             </div>
