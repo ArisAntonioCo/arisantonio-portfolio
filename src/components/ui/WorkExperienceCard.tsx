@@ -22,7 +22,7 @@ export const WorkExperienceCard = ({
   isLast = false 
 }: WorkExperienceCardProps) => {
   return (
-    <div className={`${!isLast ? 'border-b border-gray-200' : ''} px-4 sm:px-5 lg:px-6 py-4 sm:py-5 lg:py-6 flex flex-col justify-between min-h-[50%]`}>
+    <div className="px-4 sm:px-5 lg:px-6 py-4 sm:py-5 lg:py-6 flex flex-col justify-between h-[calc(45vh-8px)]">
       {/* Top Section */}
       <div>
         {/* Title and Timespan */}

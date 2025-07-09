@@ -72,28 +72,10 @@ export const ExperienceSection = () => {
     styleElement.innerHTML = `
       .custom-thick-scrollbar {
         overflow-y: scroll !important;
+        -ms-overflow-style: none !important;
+        scrollbar-width: none !important;
       }
       .custom-thick-scrollbar::-webkit-scrollbar {
-        width: 40px !important;
-      }
-      .custom-thick-scrollbar::-webkit-scrollbar-track {
-        background: #0DFF6E !important;
-        border-radius: 0 !important;
-        border: 4px solid #0DFF6E !important;
-        background-clip: content-box !important;
-      }
-      .custom-thick-scrollbar::-webkit-scrollbar-thumb {
-        background: #000000 !important;
-        border-radius: 0 !important;
-        min-height: 20px !important;
-        border: 4px solid transparent !important;
-        background-clip: content-box !important;
-      }
-      .custom-thick-scrollbar::-webkit-scrollbar-thumb:hover {
-        background: #333333 !important;
-        background-clip: content-box !important;
-      }
-      .custom-thick-scrollbar::-webkit-scrollbar-button {
         display: none !important;
       }
     `;
@@ -105,10 +87,10 @@ export const ExperienceSection = () => {
   }, []);
 
   return (
-    <section className="overflow-hidden">
-      <div className="grid lg:grid-cols-2 h-[90vh]">
+    <section className="overflow-hidden px-4 sm:px-5 lg:px-6">
+      <div className="grid lg:grid-cols-2 h-[90vh] gap-4">
         {/* Left Side - Orange with Intro Headline */}
-        <div className="bg-[#ff4d12] flex flex-col justify-between px-4 sm:px-5 lg:px-6 py-4 sm:py-5 lg:py-6">
+        <div className="bg-[#ff4d12] rounded-2xl sm:rounded-3xl flex flex-col justify-between px-4 sm:px-5 lg:px-6 py-4 sm:py-5 lg:py-6">
           <h2 className="text-sm font-normal">
             <span className="text-black">Experience</span>
           </h2>
@@ -117,23 +99,22 @@ export const ExperienceSection = () => {
           </p>
         </div>
 
-        {/* Right Side - Off-white with Work Info */}
-        <div 
-          className="bg-[#FAFAFA] flex flex-col h-full custom-thick-scrollbar"
-        >
+        {/* Right Side - Work Info Cards Container */}
+        <div className="h-full overflow-y-scroll custom-thick-scrollbar space-y-4">
           {workExperiences.map((experience, index) => (
-            <WorkExperienceCard
-              key={index}
-              title={experience.title}
-              company={experience.company}
-              location={experience.location}
-              description={experience.description}
-              skills={experience.skills}
-              timespan={experience.timespan}
-              workType={experience.workType}
-              companyLogo={experience.companyLogo}
-              isLast={index === workExperiences.length - 1}
-            />
+            <div key={index} className="bg-[#FAFAFA] rounded-2xl sm:rounded-3xl">
+              <WorkExperienceCard
+                title={experience.title}
+                company={experience.company}
+                location={experience.location}
+                description={experience.description}
+                skills={experience.skills}
+                timespan={experience.timespan}
+                workType={experience.workType}
+                companyLogo={experience.companyLogo}
+                isLast={false}
+              />
+            </div>
           ))}
         </div>
       </div>
