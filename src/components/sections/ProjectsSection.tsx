@@ -76,7 +76,7 @@ const getCardClasses = (variant: ProjectVariant) => {
 export const ProjectsSection = () => {
   return (
     <section className="bg-dark overflow-hidden">
-      <div className="px-4 sm:px-5 lg:px-6 pt-8 sm:pt-12 lg:pt-16 pb-8 sm:pb-12 lg:pb-16 space-y-8 sm:space-y-10 lg:space-y-12">
+      <div className="px-3 sm:px-4 lg:px-5 pt-8 sm:pt-12 lg:pt-16 pb-8 sm:pb-12 lg:pb-16 space-y-6 sm:space-y-8 lg:space-y-10">
         {/* Header */}
         <div className="flex items-center justify-between">
           <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-normal text-white">
@@ -94,12 +94,12 @@ export const ProjectsSection = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-5">
           {projects.map((project) => (
             <div key={project.id} className="group">
               {/* Project Card */}
               <a href={project.link} className="block">
-                <div className={`relative bg-[#1A1A1A] rounded-xl sm:rounded-2xl overflow-hidden ${getCardClasses(project.variant)}`}>
+                <div className={`relative bg-[#1A1A1A] rounded-lg sm:rounded-xl overflow-hidden ${getCardClasses(project.variant)}`}>
                   {/* Image will be added here later */}
                 </div>
               </a>

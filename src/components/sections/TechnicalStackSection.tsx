@@ -82,7 +82,7 @@ export const TechnicalStackSection = () => {
 
   return (
     <section className="bg-dark overflow-hidden">
-      <div ref={sectionRef} className="px-4 sm:px-5 lg:px-6 pt-12 sm:pt-16 lg:pt-24 pb-12 sm:pb-16 lg:pb-24 space-y-8 sm:space-y-10 lg:space-y-12">
+      <div ref={sectionRef} className="px-3 sm:px-4 lg:px-5 pt-8 sm:pt-12 lg:pt-16 pb-8 sm:pb-12 lg:pb-16 space-y-6 sm:space-y-8 lg:space-y-10">
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 sm:gap-8">
           <h2 className="text-sm font-normal flex-shrink-0">

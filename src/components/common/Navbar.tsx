@@ -60,7 +60,7 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className="relative z-50 px-6 sm:px-8 lg:px-12 py-4 sm:py-5">
+    <nav className="relative z-50 px-3 sm:px-4 lg:px-5 py-3 sm:py-4">
       <div className="flex items-center justify-between">
         {/* Logo/Name */}
         <Link href="/" className="text-light font-normal text-base sm:text-lg hover:text-accent transition-colors">

@@ -1,9 +1,9 @@
 export const HeroSection = () => {
   return (
     <section className="h-[calc(100vh-76px)] bg-dark overflow-hidden flex flex-col">
-      <div className="flex-1 flex flex-col px-4 sm:px-5 lg:px-6 pb-4 sm:pb-5 lg:pb-6 gap-4 sm:gap-5 lg:gap-6">
+      <div className="flex-1 flex flex-col px-3 sm:px-4 lg:px-5 pb-3 sm:pb-4 lg:pb-5 gap-3 sm:gap-4 lg:gap-5">
         {/* Video Container */}
-        <div className="flex-1 relative rounded-2xl sm:rounded-3xl overflow-hidden bg-dark/50 min-h-0">
+        <div className="flex-1 relative rounded-xl sm:rounded-2xl overflow-hidden bg-dark/50 min-h-0">
           <video
             autoPlay
             loop
@@ -15,7 +15,7 @@ export const HeroSection = () => {
           </video>
           
           {/* Looking for Card */}
-          <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 bg-white rounded-xl p-4 sm:p-5">
+          <div className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 bg-white rounded-lg p-3 sm:p-4">
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 sm:w-10 sm:h-10 bg-[#F5F5F5] rounded-full flex items-center justify-center">
                 <svg width="16" height="16" className="sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="none">
@@ -31,7 +31,7 @@ export const HeroSection = () => {
         </div>
         
         {/* Bottom Content */}
-        <div className="shrink-0 flex flex-col lg:flex-row justify-between items-stretch gap-4 sm:gap-6 lg:gap-8">
+        <div className="shrink-0 flex flex-col lg:flex-row justify-between items-stretch gap-3 sm:gap-4 lg:gap-6">
           {/* Left Content */}
           <div className="flex-1">
             {/* CTA */}
@@ -93,7 +93,7 @@ export const HeroSection = () => {
           </div>
           
           {/* Right Video Container */}
-          <div className="hidden lg:block flex-1 relative rounded-2xl sm:rounded-3xl overflow-hidden bg-dark/50">
+          <div className="hidden lg:block flex-1 relative rounded-xl sm:rounded-2xl overflow-hidden bg-dark/50">
             <video
               autoPlay
               loop

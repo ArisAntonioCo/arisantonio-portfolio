@@ -87,10 +87,10 @@ export const ExperienceSection = () => {
   }, []);
 
   return (
-    <section className="overflow-hidden px-4 sm:px-5 lg:px-6">
-      <div className="grid lg:grid-cols-2 h-[90vh] gap-4">
+    <section className="overflow-hidden px-3 sm:px-4 lg:px-5">
+      <div className="grid lg:grid-cols-2 lg:h-[85vh] gap-3 sm:gap-4 lg:gap-5">
         {/* Left Side - Orange with Intro Headline */}
-        <div className="bg-[#ff4d12] rounded-2xl sm:rounded-3xl flex flex-col justify-between px-4 sm:px-5 lg:px-6 py-4 sm:py-5 lg:py-6">
+        <div className="bg-[#ff4d12] rounded-xl sm:rounded-2xl flex flex-col justify-between px-3 sm:px-4 lg:px-5 py-3 sm:py-4 lg:py-5 min-h-[250px] lg:min-h-0">
           <h2 className="text-sm font-normal">
             <span className="text-black">Experience</span>
           </h2>
@@ -100,9 +100,9 @@ export const ExperienceSection = () => {
         </div>
 
         {/* Right Side - Work Info Cards Container */}
-        <div className="h-full overflow-y-scroll custom-thick-scrollbar space-y-4">
+        <div className="h-[400px] lg:h-full overflow-y-scroll custom-thick-scrollbar space-y-3 sm:space-y-4 lg:space-y-5 rounded-xl sm:rounded-2xl">
           {workExperiences.map((experience, index) => (
-            <div key={index} className="bg-[#FAFAFA] rounded-2xl sm:rounded-3xl">
+            <div key={index} className="bg-[#FAFAFA] rounded-xl sm:rounded-2xl">
               <WorkExperienceCard
                 title={experience.title}
                 company={experience.company}
