@@ -5,7 +5,9 @@
       "Bash(npm i:*)",
       "Bash(git restore:*)",
       "Bash(npm uninstall:*)",
-      "Bash(rm:*)"
+      "Bash(rm:*)",
+      "Bash(ls:*)",
+      "Bash(find:*)"
     ],
     "deny": []
   }

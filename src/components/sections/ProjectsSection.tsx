@@ -99,7 +99,7 @@ export const ProjectsSection = () => {
             <div key={project.id} className="group">
               {/* Project Card */}
               <a href={project.link} className="block">
-                <div className={`relative bg-white rounded-xl sm:rounded-2xl overflow-hidden ${getCardClasses(project.variant)}`}>
+                <div className={`relative bg-[#1A1A1A] rounded-xl sm:rounded-2xl overflow-hidden ${getCardClasses(project.variant)}`}>
                   {/* Image will be added here later */}
                 </div>
               </a>

@@ -13,6 +13,21 @@ export const HeroSection = () => {
           >
             <source src="/videos/HeroVideo.mp4" type="video/mp4" />
           </video>
+          
+          {/* Looking for Card */}
+          <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 bg-white rounded-xl p-4 sm:p-5">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-[#F5F5F5] rounded-full flex items-center justify-center">
+                <svg width="16" height="16" className="sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 5V19M5 12H19" stroke="#0F0F0F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+              <div>
+                <p className="text-xs sm:text-sm text-[#666666] font-normal">Looking for</p>
+                <p className="text-sm sm:text-base text-[#0F0F0F] font-normal">UI/UX, Frontend Roles</p>
+              </div>
+            </div>
+          </div>
         </div>
         
         {/* Bottom Content */}
