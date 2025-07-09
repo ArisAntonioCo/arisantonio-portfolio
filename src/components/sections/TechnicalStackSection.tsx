@@ -1,50 +1,14 @@
 "use client";
 
-import dynamic from 'next/dynamic';
-import { memo, Suspense, useEffect, useRef, useState } from 'react';
-
-// Dynamically import StackIcon to reduce initial bundle size
-const StackIcon = dynamic(() => import('tech-stack-icons'), {
-  loading: () => <div className="w-4 h-4 bg-white/10 rounded animate-pulse" />,
-  ssr: false
-});
+import StackIcon from 'tech-stack-icons';
+import { memo, useEffect, useRef, useState } from 'react';
 
 // Memoize the tech badge component to prevent unnecessary re-renders
 const TechBadge = memo(({ tech }: { tech: { name: string; iconName: string; label: string } }) => {
-  const [isVisible, setIsVisible] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <div
-      ref={ref}
-      className="flex items-center gap-2 px-3 py-1.5 bg-white/5 backdrop-blur-[10px] border border-white/10 rounded-lg hover:bg-white/10 transition-colors"
-    >
+    <div className="flex items-center gap-2 px-3 py-1.5 bg-white/5 backdrop-blur-[10px] border border-white/10 rounded-lg hover:bg-white/10 transition-colors">
       <div className="w-4 h-4">
-        {isVisible ? (
-          <Suspense fallback={<div className="w-4 h-4 bg-white/10 rounded animate-pulse" />}>
-            <StackIcon name={tech.iconName} />
-          </Suspense>
-        ) : (
-          <div className="w-4 h-4 bg-white/10 rounded animate-pulse" />
-        )}
+        <StackIcon name={tech.iconName} />
       </div>
       <span className="text-xs text-white font-normal">{tech.label}</span>
     </div>
@@ -95,9 +59,30 @@ const techStack = [
 ];
 
 export const TechnicalStackSection = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className="bg-dark overflow-hidden">
-      <div className="px-4 sm:px-5 lg:px-6 pt-12 sm:pt-16 lg:pt-24 pb-12 sm:pb-16 lg:pb-24 space-y-8 sm:space-y-10 lg:space-y-12">
+      <div ref={sectionRef} className="px-4 sm:px-5 lg:px-6 pt-12 sm:pt-16 lg:pt-24 pb-12 sm:pb-16 lg:pb-24 space-y-8 sm:space-y-10 lg:space-y-12">
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 sm:gap-8">
           <h2 className="text-sm font-normal flex-shrink-0">
@@ -110,8 +95,17 @@ export const TechnicalStackSection = () => {
 
         {/* Tech Stack Badges */}
         <div className="flex flex-wrap gap-2">
-          {techStack.map((tech) => (
-            <TechBadge key={tech.name} tech={tech} />
+          {isVisible && techStack.map((tech, index) => (
+            <div
+              key={tech.name}
+              className="animate-fade-in"
+              style={{
+                animationDelay: `${index * 20}ms`,
+                animationFillMode: 'both'
+              }}
+            >
+              <TechBadge tech={tech} />
+            </div>
           ))}
         </div>
       </div>
