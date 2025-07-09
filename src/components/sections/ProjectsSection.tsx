@@ -80,7 +80,7 @@ export const ProjectsSection = () => {
         {/* Header */}
         <div className="flex items-center justify-between">
           <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-normal text-white">
-            Projects
+            Projects <span className="text-[#8C8C8C] text-lg sm:text-xl" style={{ fontFamily: 'NeuePixelGrotesk, monospace' }}>({projects.length})</span>
           </h2>
           <a 
             href="#"
