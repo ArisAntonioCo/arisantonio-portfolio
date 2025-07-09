@@ -14,7 +14,7 @@ export const HomePageView = () => {
   // Track scroll progress for hero section
   const { scrollYProgress } = useScroll({
     target: heroRef,
-    offset: ["start start", "start -50%"]
+    offset: ["start start", "end start"]
   });
   
   // Smooth spring animation

@@ -74,6 +74,7 @@ export const ExperienceSection = () => {
         overflow-y: scroll !important;
         -ms-overflow-style: none !important;
         scrollbar-width: none !important;
+        scroll-behavior: smooth !important;
       }
       .custom-thick-scrollbar::-webkit-scrollbar {
         display: none !important;
