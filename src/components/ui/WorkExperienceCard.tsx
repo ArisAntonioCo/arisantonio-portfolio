@@ -2,6 +2,7 @@ interface WorkExperienceCardProps {
   title: string;
   company: string;
   location: string;
+  description?: string;
   skills: string[];
   timespan: string;
   workType: string;
@@ -13,6 +14,7 @@ export const WorkExperienceCard = ({
   title, 
   company,
   location,
+  description,
   skills,
   timespan,
   workType,
@@ -36,6 +38,11 @@ export const WorkExperienceCard = ({
             {timespan}
           </span>
         </div>
+        
+        {/* Description */}
+        {description && (
+          <p className="text-sm text-[#666666] mb-3 line-clamp-2">{description}</p>
+        )}
         
         {/* Skills */}
         <div className="flex gap-2 flex-wrap">

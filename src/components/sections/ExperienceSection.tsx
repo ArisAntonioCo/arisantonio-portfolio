@@ -8,6 +8,7 @@ const workExperiences = [
     title: "Senior UI/UX Designer",
     company: "Tech Company Inc.",
     location: "San Francisco, CA",
+    description: "Led design initiatives for enterprise SaaS products, collaborating with cross-functional teams to deliver user-centered solutions.",
     skills: ["Design Systems", "Figma", "User Research", "Prototyping"],
     timespan: "Jan 2022 - Present",
     workType: "full-time",
@@ -17,6 +18,7 @@ const workExperiences = [
     title: "Frontend Developer",
     company: "Digital Agency Co.",
     location: "New York, NY",
+    description: "Developed responsive web applications for Fortune 500 clients, focusing on performance optimization and accessibility.",
     skills: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
     timespan: "Mar 2020 - Dec 2022",
     workType: "remote",
@@ -26,6 +28,7 @@ const workExperiences = [
     title: "UI/UX Design Intern",
     company: "Startup Hub",
     location: "Austin, TX",
+    description: "Assisted in creating user interfaces for mobile applications, conducting user research and usability testing.",
     skills: ["Sketch", "Adobe XD", "Wireframing", "User Testing"],
     timespan: "Jun 2019 - Feb 2020",
     workType: "intern",
@@ -35,6 +38,7 @@ const workExperiences = [
     title: "Product Designer",
     company: "Innovation Labs",
     location: "Seattle, WA",
+    description: "Designed end-to-end experiences for consumer products, from concept to launch, working closely with product managers.",
     skills: ["Product Strategy", "Interaction Design", "Motion Design", "Analytics"],
     timespan: "Aug 2018 - May 2019",
     workType: "contractual",
@@ -44,6 +48,7 @@ const workExperiences = [
     title: "Visual Designer",
     company: "Creative Studio",
     location: "Los Angeles, CA",
+    description: "Created visual identities and marketing materials for diverse clients across entertainment and tech industries.",
     skills: ["Branding", "Illustration", "Photography", "Video Editing"],
     timespan: "Jan 2017 - Jul 2018",
     workType: "part-time",
@@ -53,6 +58,7 @@ const workExperiences = [
     title: "Junior Developer",
     company: "Code Academy",
     location: "Boston, MA",
+    description: "Built and maintained educational web platforms, contributing to frontend development and bug fixes.",
     skills: ["HTML", "CSS", "JavaScript", "Git"],
     timespan: "Jun 2016 - Dec 2016",
     workType: "intern",
@@ -121,6 +127,7 @@ export const ExperienceSection = () => {
               title={experience.title}
               company={experience.company}
               location={experience.location}
+              description={experience.description}
               skills={experience.skills}
               timespan={experience.timespan}
               workType={experience.workType}
