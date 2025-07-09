@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface WorkExperienceCardProps {
   title: string;
   company: string;
@@ -14,12 +16,10 @@ export const WorkExperienceCard = ({
   title, 
   company,
   location,
-  description,
   skills,
   timespan,
   workType,
-  companyLogo,
-  isLast = false 
+  companyLogo
 }: WorkExperienceCardProps) => {
   return (
     <div className="px-4 sm:px-5 lg:px-6 py-4 sm:py-5 lg:py-6 flex flex-col justify-between h-[calc(45vh-8px)]">
@@ -61,9 +61,14 @@ export const WorkExperienceCard = ({
       <div className="flex items-end justify-between mt-6">
         {/* Company and Location */}
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-black rounded-lg flex-shrink-0">
+          <div className="w-10 h-10 bg-black rounded-lg flex-shrink-0 relative">
             {companyLogo && (
-              <img src={companyLogo} alt={company} className="w-full h-full object-cover rounded-lg" />
+              <Image 
+                src={companyLogo} 
+                alt={company} 
+                fill
+                className="object-cover rounded-lg" 
+              />
             )}
           </div>
           <div>
