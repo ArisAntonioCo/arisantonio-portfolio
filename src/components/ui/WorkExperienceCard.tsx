@@ -40,9 +40,9 @@ export const WorkExperienceCard = ({
         </div>
         
         {/* Description */}
-        {description && (
+        {/* {description && (
           <p className="text-sm text-[#666666] mb-3 line-clamp-2">{description}</p>
-        )}
+        )} */}
         
         {/* Skills */}
         <div className="flex gap-2 flex-wrap">
