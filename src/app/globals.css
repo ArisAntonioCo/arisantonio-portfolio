@@ -10,6 +10,14 @@
 }
 
 @font-face {
+  font-family: 'Object Sans';
+  src: url('/fonts/ObjectSans-Heavy.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: 'NeuePixelGrotesk';
   src: url('/fonts/NeuePixelGrotesk.otf') format('opentype');
   font-weight: normal;

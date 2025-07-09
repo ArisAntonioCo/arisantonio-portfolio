@@ -101,7 +101,7 @@ export const TechnicalStackSection = () => {
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 sm:gap-8">
           <h2 className="text-sm font-normal flex-shrink-0">
-            <span className="text-[#8C8C8C]">Technical Stack</span>
+            <span className="text-[#8C8C8C]">Technology Stack</span>
           </h2>
           <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-normal text-white sm:max-w-2xl sm:text-right">
             A comprehensive overview of the technologies, frameworks, and tools I leverage to build <span style={{ fontFamily: 'NeuePixelGrotesk, monospace', fontWeight: 300 }}>modern</span>, <span style={{ fontFamily: 'NeuePixelGrotesk, monospace', fontWeight: 300 }}>scalable</span>, and <span style={{ fontFamily: 'NeuePixelGrotesk, monospace', fontWeight: 300 }}>performant applications</span>.
