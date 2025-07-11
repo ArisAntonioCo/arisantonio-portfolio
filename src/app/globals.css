@@ -53,20 +53,21 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Fade in animation for tech badges */
+/* Optimized fade-in animation for tech badges */
 @keyframes fade-in {
-  from {
+  0% {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(8px) translateZ(0);
   }
-  to {
+  100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) translateZ(0);
   }
 }
 
 .animate-fade-in {
-  animation: fade-in 0.3s ease-out;
-  opacity: 0;
+  animation: fade-in 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateZ(0); /* Force GPU acceleration */
+  will-change: opacity, transform;
 }
 

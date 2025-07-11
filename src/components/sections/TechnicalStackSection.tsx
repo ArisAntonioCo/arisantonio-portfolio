@@ -12,11 +12,18 @@ const StackIcon = dynamic(() => import('tech-stack-icons'), {
 // Memoize the tech badge component to prevent unnecessary re-renders
 const TechBadge = memo(({ tech }: { tech: { name: string; iconName: string; label: string } }) => {
   return (
-    <div className="flex items-center gap-2 px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg hover:bg-white/10 transition-colors">
-      <div className="w-4 h-4">
+    <div 
+      className="flex items-center gap-2 px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg hover:bg-white/10 transition-all duration-200 ease-out transform-gpu hover:scale-[1.02] active:scale-[0.98]"
+      style={{ 
+        willChange: 'transform, background-color',
+        backfaceVisibility: 'hidden',
+        WebkitFontSmoothing: 'antialiased'
+      }}
+    >
+      <div className="w-4 h-4 flex-shrink-0">
         <StackIcon name={tech.iconName} />
       </div>
-      <span className="text-xs text-white font-normal">{tech.label}</span>
+      <span className="text-xs text-white font-normal whitespace-nowrap">{tech.label}</span>
     </div>
   );
 });
@@ -65,10 +72,12 @@ const techStack = [
 ];
 
 const BATCH_SIZE = 8; // Render 8 icons at a time
+const INITIAL_BATCH = 16; // Show more icons initially for better UX
 
 export const TechnicalStackSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [visibleCount, setVisibleCount] = useState(0);
+  const [isInitialized, setIsInitialized] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -76,6 +85,11 @@ export const TechnicalStackSection = () => {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
+          // Start with initial batch immediately
+          requestAnimationFrame(() => {
+            setVisibleCount(INITIAL_BATCH);
+            setIsInitialized(true);
+          });
           observer.disconnect();
         }
       },
@@ -92,16 +106,22 @@ export const TechnicalStackSection = () => {
     return () => observer.disconnect();
   }, []);
 
-  // Progressive rendering effect
+  // Progressive rendering effect with requestAnimationFrame
   useEffect(() => {
-    if (isVisible && visibleCount < techStack.length) {
+    if (isInitialized && visibleCount < techStack.length) {
+      let rafId: number;
       const timer = setTimeout(() => {
-        setVisibleCount(prev => Math.min(prev + BATCH_SIZE, techStack.length));
-      }, 100); // Add next batch every 100ms
+        rafId = requestAnimationFrame(() => {
+          setVisibleCount(prev => Math.min(prev + BATCH_SIZE, techStack.length));
+        });
+      }, 60); // Even faster for super smooth experience
       
-      return () => clearTimeout(timer);
+      return () => {
+        clearTimeout(timer);
+        if (rafId) cancelAnimationFrame(rafId);
+      };
     }
-  }, [isVisible, visibleCount]);
+  }, [isInitialized, visibleCount]);
 
   return (
     <section className="bg-dark overflow-hidden">
@@ -121,10 +141,12 @@ export const TechnicalStackSection = () => {
           {techStack.slice(0, visibleCount).map((tech, index) => (
             <div
               key={tech.name}
-              className="animate-fade-in"
+              className="animate-fade-in opacity-0"
               style={{
-                animationDelay: `${(index % BATCH_SIZE) * 20}ms`,
-                animationFillMode: 'both'
+                animationDelay: `${(index % BATCH_SIZE) * 25}ms`,
+                animationFillMode: 'forwards',
+                animationDuration: '400ms',
+                willChange: 'opacity, transform'
               }}
             >
               <TechBadge tech={tech} />
