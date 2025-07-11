@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence, useSpring } from "framer-motion";
 
 interface CustomCursorProps {
@@ -8,19 +8,14 @@ interface CustomCursorProps {
 }
 
 export const CustomCursor = ({ isInHero }: CustomCursorProps) => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isClicking, setIsClicking] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
   const [magnetTarget, setMagnetTarget] = useState<DOMRect | null>(null);
   const [isCursorReady, setIsCursorReady] = useState(false);
-  const clickAreaRef = useRef<HTMLDivElement>(null);
 
   // Spring animations for smooth cursor movement
   const cursorX = useSpring(0, { stiffness: 500, damping: 28 });
   const cursorY = useSpring(0, { stiffness: 500, damping: 28 });
-  
-  // Offset to align custom cursor with system cursor
-  const CURSOR_OFFSET = { x: 0, y: 0 };
 
   // Initialize cursor position on mount
   useEffect(() => {
@@ -38,6 +33,9 @@ export const CustomCursor = ({ isInHero }: CustomCursorProps) => {
   }, [cursorX, cursorY]);
 
   useEffect(() => {
+    // Offset to align custom cursor with system cursor
+    const CURSOR_OFFSET = { x: 0, y: 0 };
+    
     const findNearestInteractive = (x: number, y: number): { element: Element; distance: number; rect: DOMRect } | null => {
       const interactiveSelectors = [
         'a[href]',
@@ -68,7 +66,6 @@ export const CustomCursor = ({ isInHero }: CustomCursorProps) => {
     const updateMousePosition = (e: MouseEvent) => {
       const x = e.clientX;
       const y = e.clientY;
-      setMousePosition({ x, y });
 
       // Find nearest interactive element for magnet effect
       const nearest = findNearestInteractive(x, y);
@@ -128,7 +125,7 @@ export const CustomCursor = ({ isInHero }: CustomCursorProps) => {
       window.removeEventListener("mouseup", handleMouseUp);
       window.removeEventListener("click", handleClick, true);
     };
-  }, [cursorX, cursorY, isInHero]);
+  }, [cursorX, cursorY, isInHero, isHovering]);
 
   return (
     <>
