@@ -22,7 +22,7 @@ export const WorkExperienceCard = ({
   companyLogo
 }: WorkExperienceCardProps) => {
   return (
-    <div className="px-3 sm:px-4 lg:px-5 py-3 sm:py-4 lg:py-5 flex flex-col justify-between min-h-[200px] lg:h-[calc(43.5vh-6px)]">
+    <div className="px-3 sm:px-4 lg:px-5 py-4 sm:py-4 lg:py-5 flex flex-col justify-between min-h-[220px] sm:min-h-[200px] lg:h-[calc(43.5vh-6px)]">
       {/* Top Section */}
       <div>
         {/* Title and Timespan */}
@@ -58,17 +58,19 @@ export const WorkExperienceCard = ({
       </div>
 
       {/* Bottom Section */}
-      <div className="flex items-end justify-between mt-4 lg:mt-6">
+      <div className="flex items-end justify-between mt-6 sm:mt-5 lg:mt-6">
         {/* Company and Location */}
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-black rounded-lg flex-shrink-0 relative">
-            {companyLogo && (
+          <div className="w-10 h-10 rounded-lg flex-shrink-0 relative overflow-hidden">
+            {companyLogo ? (
               <Image 
                 src={companyLogo} 
                 alt={company} 
                 fill
-                className="object-cover rounded-lg" 
+                className="object-contain" 
               />
+            ) : (
+              <div className="w-full h-full bg-black rounded-lg" />
             )}
           </div>
           <div>

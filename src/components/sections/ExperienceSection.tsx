@@ -5,64 +5,34 @@ import { useEffect } from "react";
 
 const workExperiences = [
   {
-    title: "Senior UI/UX Designer",
-    company: "Tech Company Inc.",
-    location: "San Francisco, CA",
-    description: "Led design initiatives for enterprise SaaS products, collaborating with cross-functional teams to deliver user-centered solutions.",
-    skills: ["Design Systems", "Figma", "User Research", "Prototyping"],
-    timespan: "Jan 2022 - Present",
+    title: "Software Developer & UI/UX Designer",
+    company: "Zaigo Labs",
+    location: "New York City, USA",
+    description: "",
+    skills: ["Prompt Engineering", "Agentic Coding", "Frontend Development", "Backend Development", "Meta Ads Manager", "SEO", "User Research", "Copywriting", "Marketing", "Media Generation", "User Interface Design", "User Experience", "AI Automation", "Generative AI", "UI/UX Design"],
+    timespan: "Jun 2025 - Present",
     workType: "full-time",
-    companyLogo: undefined
+    companyLogo: "/zaigologo.png"
   },
   {
-    title: "Frontend Developer",
-    company: "Digital Agency Co.",
-    location: "New York, NY",
-    description: "Developed responsive web applications for Fortune 500 clients, focusing on performance optimization and accessibility.",
-    skills: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
-    timespan: "Mar 2020 - Dec 2022",
-    workType: "remote",
-    companyLogo: undefined
+    title: "Product Development",
+    company: "Calibr8 Systems, Inc.",
+    location: "Metro Manila, PH",
+    description: "",
+    skills: ["User Interface Design", "User Experience", "User Research", "Fullstack Development", "Product Design"],
+    timespan: "Feb 2025 - April 2025",
+    workType: "internship",
+    companyLogo: "/c8logo.png"
   },
   {
-    title: "UI/UX Design Intern",
-    company: "Startup Hub",
-    location: "Austin, TX",
-    description: "Assisted in creating user interfaces for mobile applications, conducting user research and usability testing.",
-    skills: ["Sketch", "Adobe XD", "Wireframing", "User Testing"],
-    timespan: "Jun 2019 - Feb 2020",
-    workType: "intern",
-    companyLogo: undefined
-  },
-  {
-    title: "Product Designer",
-    company: "Innovation Labs",
-    location: "Seattle, WA",
-    description: "Designed end-to-end experiences for consumer products, from concept to launch, working closely with product managers.",
-    skills: ["Product Strategy", "Interaction Design", "Motion Design", "Analytics"],
-    timespan: "Aug 2018 - May 2019",
-    workType: "contractual",
-    companyLogo: undefined
-  },
-  {
-    title: "Visual Designer",
-    company: "Creative Studio",
-    location: "Los Angeles, CA",
-    description: "Created visual identities and marketing materials for diverse clients across entertainment and tech industries.",
-    skills: ["Branding", "Illustration", "Photography", "Video Editing"],
-    timespan: "Jan 2017 - Jul 2018",
-    workType: "part-time",
-    companyLogo: undefined
-  },
-  {
-    title: "Junior Developer",
-    company: "Code Academy",
-    location: "Boston, MA",
-    description: "Built and maintained educational web platforms, contributing to frontend development and bug fixes.",
-    skills: ["HTML", "CSS", "JavaScript", "Git"],
-    timespan: "Jun 2016 - Dec 2016",
-    workType: "intern",
-    companyLogo: undefined
+    title: "Information Technology Student",
+    company: "Silliman University",
+    location: "Dumaguete City, PH",
+    description: "",
+    skills: ["Software Development", "Capstone", "Game Development", "UI/UX Design", "Networking", "Data Structures"],
+    timespan: "Aug 2021 - April 2025",
+    workType: "student",
+    companyLogo: "/sillimanlogo.png"
   }
 ];
 
