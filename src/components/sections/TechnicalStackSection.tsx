@@ -1,12 +1,18 @@
 "use client";
 
-import StackIcon from 'tech-stack-icons';
+import dynamic from 'next/dynamic';
 import { memo, useEffect, useRef, useState } from 'react';
+
+// Lazy load the StackIcon component
+const StackIcon = dynamic(() => import('tech-stack-icons'), {
+  loading: () => <div className="w-4 h-4 bg-white/10 rounded animate-pulse" />,
+  ssr: false // Disable server-side rendering for icons
+});
 
 // Memoize the tech badge component to prevent unnecessary re-renders
 const TechBadge = memo(({ tech }: { tech: { name: string; iconName: string; label: string } }) => {
   return (
-    <div className="flex items-center gap-2 px-3 py-1.5 bg-white/5 backdrop-blur-[10px] border border-white/10 rounded-lg hover:bg-white/10 transition-colors">
+    <div className="flex items-center gap-2 px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg hover:bg-white/10 transition-colors">
       <div className="w-4 h-4">
         <StackIcon name={tech.iconName} />
       </div>
@@ -58,8 +64,11 @@ const techStack = [
   { name: 'v0', iconName: 'v0', label: 'v0' }
 ];
 
+const BATCH_SIZE = 8; // Render 8 icons at a time
+
 export const TechnicalStackSection = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [visibleCount, setVisibleCount] = useState(0);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -70,7 +79,10 @@ export const TechnicalStackSection = () => {
           observer.disconnect();
         }
       },
-      { threshold: 0.1 }
+      { 
+        threshold: 0.1,
+        rootMargin: '200px' // Start loading when section is 200px away from viewport
+      }
     );
 
     if (sectionRef.current) {
@@ -79,6 +91,17 @@ export const TechnicalStackSection = () => {
 
     return () => observer.disconnect();
   }, []);
+
+  // Progressive rendering effect
+  useEffect(() => {
+    if (isVisible && visibleCount < techStack.length) {
+      const timer = setTimeout(() => {
+        setVisibleCount(prev => Math.min(prev + BATCH_SIZE, techStack.length));
+      }, 100); // Add next batch every 100ms
+      
+      return () => clearTimeout(timer);
+    }
+  }, [isVisible, visibleCount]);
 
   return (
     <section className="bg-dark overflow-hidden">
@@ -94,19 +117,36 @@ export const TechnicalStackSection = () => {
         </div>
 
         {/* Tech Stack Badges */}
-        <div className="flex flex-wrap gap-2">
-          {isVisible && techStack.map((tech, index) => (
+        <div className="flex flex-wrap gap-2" style={{ contain: 'layout style paint' }}>
+          {techStack.slice(0, visibleCount).map((tech, index) => (
             <div
               key={tech.name}
               className="animate-fade-in"
               style={{
-                animationDelay: `${index * 20}ms`,
+                animationDelay: `${(index % BATCH_SIZE) * 20}ms`,
                 animationFillMode: 'both'
               }}
             >
               <TechBadge tech={tech} />
             </div>
           ))}
+          
+          {/* Show skeleton loaders for remaining items */}
+          {isVisible && visibleCount < techStack.length && (
+            <>
+              {Array(Math.min(BATCH_SIZE, techStack.length - visibleCount))
+                .fill(0)
+                .map((_, i) => (
+                  <div
+                    key={`skeleton-${i}`}
+                    className="flex items-center gap-2 px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg animate-pulse"
+                  >
+                    <div className="w-4 h-4 bg-white/10 rounded" />
+                    <div className="w-20 h-3 bg-white/10 rounded" />
+                  </div>
+                ))}
+            </>
+          )}
         </div>
       </div>
     </section>
