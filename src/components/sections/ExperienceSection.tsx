@@ -19,7 +19,7 @@ const workExperiences = [
     company: "Calibr8 Systems, Inc.",
     location: "Metro Manila, PH",
     description: "",
-    skills: ["User Interface Design", "User Experience", "User Research", "Fullstack Development", "Product Design"],
+    skills: ["User Interface Design", "User Experience", "User Research", "Fullstack Development", "Product Design", "Wireframing", "Prototyping"],
     timespan: "Feb 2025 - April 2025",
     workType: "internship",
     companyLogo: "/c8logo.png"
@@ -61,10 +61,12 @@ export const ExperienceSection = () => {
     <section className="overflow-hidden px-3 sm:px-4 lg:px-5">
       <div className="grid lg:grid-cols-2 lg:h-[87vh] gap-1.5 sm:gap-2 lg:gap-3">
         {/* Left Side - Orange with Intro Headline */}
-        <div className="bg-[#ff4d12] rounded-xl sm:rounded-2xl flex flex-col justify-between px-3 sm:px-4 lg:px-5 py-3 sm:py-4 lg:py-5 min-h-[250px] lg:h-full">
+        <div className="bg-[#ff4d12] rounded-xl sm:rounded-2xl flex flex-col px-3 sm:px-4 lg:px-5 py-3 sm:py-4 lg:py-5 min-h-[250px] lg:h-full">
           <h2 className="text-sm font-normal">
             <span className="text-black">Experience</span>
           </h2>
+          
+          
           <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-normal text-black max-w-2xl" style={{ fontFamily: 'NeuePixelGrotesk, monospace' }}>
             Crafting digital experiences through thoughtful design and clean code. Transforming complex ideas into intuitive interfaces that users love. Building the future, one pixel at a time.
           </p>

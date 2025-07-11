@@ -38,7 +38,7 @@ Based on the WorkExperienceCard component, each experience entry should follow t
   "company": "Calibr8 Systems, Inc.",
   "location": "Metro Manila, PH",
   "description": "",
-  "skills": ["User Interface Design", "User Experience", "User Research", "Fullstack Development", "Product Design"],
+  "skills": ["User Interface Design", "User Experience", "User Research", "Fullstack Development", "Product Design", "Wireframing", "Prototyping"],
   "timespan": "Feb 2025 - April 2025",
   "workType": "Internship",
   "companyLogo": "/images/companies/company2-logo.png"
