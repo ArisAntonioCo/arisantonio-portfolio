@@ -38,7 +38,7 @@ export const CustomCursor = ({ isInHero }: CustomCursorProps) => {
   }, [cursorX, cursorY]);
 
   useEffect(() => {
-    const findNearestInteractive = (x: number, y: number) => {
+    const findNearestInteractive = (x: number, y: number): { element: Element; distance: number; rect: DOMRect } | null => {
       const interactiveSelectors = [
         'a[href]',
         'button',
