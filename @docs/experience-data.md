@@ -1,7 +1,6 @@
 # Experience Data Structure
 
 Based on the WorkExperienceCard component, each experience entry should follow this structure:
-TEST
 
 ```typescript
 {

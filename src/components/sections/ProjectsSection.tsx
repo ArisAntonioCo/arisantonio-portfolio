@@ -1,64 +1,5 @@
-type ProjectVariant = 'square' | 'standard' | 'wide';
-
-interface Project {
-  id: string;
-  name: string;
-  image: string;
-  variant: ProjectVariant;
-  category: string;
-  link: string;
-}
-
-const projects: Project[] = [
-  {
-    id: '1',
-    name: 'Dashboard Analytics',
-    image: '/images/project1.jpg',
-    variant: 'wide',
-    category: 'Frontend',
-    link: '#'
-  },
-  {
-    id: '2',
-    name: 'E-Commerce Platform',
-    image: '/images/project2.jpg',
-    variant: 'square',
-    category: 'UI/UX',
-    link: '#'
-  },
-  {
-    id: '3',
-    name: 'Mobile Banking App',
-    image: '/images/project3.jpg',
-    variant: 'standard',
-    category: 'Frontend',
-    link: '#'
-  },
-  {
-    id: '4',
-    name: 'Real Estate Portal',
-    image: '/images/project4.jpg',
-    variant: 'standard',
-    category: 'UI/UX',
-    link: '#'
-  },
-  {
-    id: '5',
-    name: 'Social Media Campaign',
-    image: '/images/project5.jpg',
-    variant: 'wide',
-    category: 'Brand Design',
-    link: '#'
-  },
-  {
-    id: '6',
-    name: 'Brand Identity Design',
-    image: '/images/project6.jpg',
-    variant: 'square',
-    category: 'Brand Design',
-    link: '#'
-  }
-];
+import Link from 'next/link';
+import { projects, type Project, type ProjectVariant } from '@/data/projects';
 
 const getCardClasses = (variant: ProjectVariant) => {
   switch (variant) {
@@ -80,7 +21,7 @@ export const ProjectsSection = () => {
         {/* Header */}
         <div className="flex items-center justify-between">
           <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-normal text-white">
-            Projects <span className="text-[#8C8C8C] text-lg sm:text-xl" style={{ fontFamily: 'NeuePixelGrotesk, monospace' }}>({projects.length})</span>
+            Case Studies <span className="text-[#8C8C8C] text-lg sm:text-xl" style={{ fontFamily: 'NeuePixelGrotesk, monospace' }}>({projects.length})</span>
           </h2>
           <a 
             href="#"
@@ -98,11 +39,11 @@ export const ProjectsSection = () => {
           {projects.map((project) => (
             <div key={project.id} className="group">
               {/* Project Card */}
-              <a href={project.link} className="block">
+              <Link href={project.link} className="block">
                 <div className={`relative bg-[#1A1A1A] rounded-lg sm:rounded-xl overflow-hidden ${getCardClasses(project.variant)}`}>
                   {/* Image will be added here later */}
                 </div>
-              </a>
+              </Link>
               
               {/* Project Info */}
               <div className="mt-3 sm:mt-4 flex items-center justify-between gap-2">
