@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { projects, type ProjectVariant } from '@/data/projects';
+import { projects } from '@/data/projects';
+import { ProjectVariant } from '@/types/project';
 
 const getCardClasses = (variant: ProjectVariant) => {
   switch (variant) {

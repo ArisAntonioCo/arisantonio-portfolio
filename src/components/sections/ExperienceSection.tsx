@@ -1,9 +1,10 @@
 "use client";
 
 import { WorkExperienceCard } from "@/components/ui/WorkExperienceCard";
+import { WorkExperience } from "@/types/experience";
 import { useEffect } from "react";
 
-const workExperiences = [
+const workExperiences: WorkExperience[] = [
   {
     title: "Software Developer & UI/UX Designer",
     company: "Zaigo Labs",

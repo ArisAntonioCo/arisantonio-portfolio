@@ -31,11 +31,43 @@
   --color-dark: #0F0F0F;
   --color-light: #FFFFFF;
   --color-muted: #8C8C8C;
-  --color-accent: #FF5500;
+  --color-accent-primary: #ff4d12;
+  --color-accent-hover: #E64D00;
+  --color-accent-secondary: #FF5500;
+  
+  /* Background Colors */
+  --color-bg-card: #1A1A1A;
+  --color-bg-overlay: rgba(255, 255, 255, 0.05);
+  --color-bg-dark-overlay: rgba(0, 0, 0, 0.5);
+  --color-border: rgba(255, 255, 255, 0.1);
   
   /* Default theme colors */
   --background: #0F0F0F;
   --foreground: #FFFFFF;
+  
+  /* Spacing */
+  --spacing-xs: 0.75rem;  /* 12px */
+  --spacing-sm: 1rem;     /* 16px */
+  --spacing-md: 1.25rem;  /* 20px */
+  --spacing-lg: 1.5rem;   /* 24px */
+  --spacing-xl: 2rem;     /* 32px */
+  --spacing-2xl: 3rem;    /* 48px */
+  --spacing-3xl: 4rem;    /* 64px */
+  
+  
+  /* Font Families */
+  --font-default: 'Object Sans', -apple-system, system-ui, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'NeuePixelGrotesk', monospace;
+  
+  /* Z-index layers */
+  --z-base: 0;
+  --z-dropdown: 10;
+  --z-sticky: 20;
+  --z-fixed: 30;
+  --z-modal-backdrop: 40;
+  --z-modal: 50;
+  --z-popover: 60;
+  --z-tooltip: 70;
 }
 
 @theme inline {

@@ -1,16 +1,5 @@
 import Image from "next/image";
-
-interface WorkExperienceCardProps {
-  title: string;
-  company: string;
-  location: string;
-  description?: string;
-  skills: string[];
-  timespan: string;
-  workType: string;
-  companyLogo?: string;
-  isLast?: boolean;
-}
+import { WorkExperienceCardProps } from '@/types/experience';
 
 export const WorkExperienceCard = ({ 
   title, 
