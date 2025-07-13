@@ -1,6 +1,6 @@
 "use client";
 
-import { HeroSection } from "@/components/sections/HeroSection";
+import HeroSection from "@/components/sections/HeroSection";
 import { PhilosophySection } from "@/components/sections/PhilosophySection";
 import { TechnicalStackSection } from "@/components/sections/TechnicalStackSection";
 import { ProjectsSection } from "@/components/sections/ProjectsSection";
@@ -41,36 +41,29 @@ export const HomePageView = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   
-  // Add/remove custom cursor class to body
-  useEffect(() => {
-    if (isInHero) {
-      document.body.classList.add("custom-cursor-active");
-    } else {
-      document.body.classList.remove("custom-cursor-active");
-    }
+  // Add/remove custom cursor class to body - commented out for now
+  // useEffect(() => {
+  //   if (isInHero) {
+  //     document.body.classList.add("custom-cursor-active");
+  //   } else {
+  //     document.body.classList.remove("custom-cursor-active");
+  //   }
     
-    return () => {
-      document.body.classList.remove("custom-cursor-active");
-    };
-  }, [isInHero]);
+  //   return () => {
+  //     document.body.classList.remove("custom-cursor-active");
+  //   };
+  // }, [isInHero]);
   
   return (
     <>
-      <CustomCursor isInHero={isInHero} />
+      {/* Custom cursor hidden for now - will use later */}
+      {/* <CustomCursor isInHero={isInHero} /> */}
       
       <div ref={heroRef}>
         <HeroSection />
       </div>
       
-      <motion.div
-        style={{ y: nextSectionY }}
-        className="relative z-10 bg-dark"
-      >
-        <TechnicalStackSection />
-        <PhilosophySection />
-        <ExperienceSection />
-        <ProjectsSection />
-      </motion.div>
+      {/* All other sections hidden for now */}
     </>
   );
 };

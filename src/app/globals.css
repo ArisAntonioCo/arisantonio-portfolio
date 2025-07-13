@@ -1,136 +1,36 @@
 @import "tailwindcss";
 
-/* Font Face Declaration */
-@font-face {
-  font-family: 'Object Sans';
-  src: url('/fonts/ObjectSans-Regular.otf') format('opentype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Object Sans';
-  src: url('/fonts/ObjectSans-Heavy.otf') format('opentype');
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'NeuePixelGrotesk';
-  src: url('/fonts/NeuePixelGrotesk.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
 /* CSS Variables */
 :root {
-  /* Brand Colors */
-  --color-dark: #0F0F0F;
-  --color-light: #FFFFFF;
-  --color-muted: #8C8C8C;
-  --color-accent-primary: #ff4d12;
-  --color-accent-hover: #E64D00;
-  --color-accent-secondary: #FF5500;
+  /* Colors */
+  --color-background: #E6E6E6;
+  --color-container: #F5F5F5;
+  --color-text: #000000;
+  --color-text-secondary: #666666;
+  --color-accent: #4800FF;
+  --color-accent-hover: #3600CC;
   
-  /* Background Colors */
-  --color-bg-card: #1A1A1A;
-  --color-bg-overlay: rgba(255, 255, 255, 0.05);
-  --color-bg-dark-overlay: rgba(0, 0, 0, 0.5);
-  --color-border: rgba(255, 255, 255, 0.1);
+  /* Theme colors for Tailwind */
+  --background: #E6E6E6;
+  --foreground: #000000;
   
-  /* Default theme colors */
-  --background: #0F0F0F;
-  --foreground: #FFFFFF;
-  
-  /* Spacing */
-  --spacing-xs: 0.75rem;  /* 12px */
-  --spacing-sm: 1rem;     /* 16px */
-  --spacing-md: 1.25rem;  /* 20px */
-  --spacing-lg: 1.5rem;   /* 24px */
-  --spacing-xl: 2rem;     /* 32px */
-  --spacing-2xl: 3rem;    /* 48px */
-  --spacing-3xl: 4rem;    /* 64px */
-  
-  
-  /* Font Families */
-  --font-default: 'Object Sans', -apple-system, system-ui, BlinkMacSystemFont, sans-serif;
-  --font-mono: 'NeuePixelGrotesk', monospace;
-  
-  /* Z-index layers */
-  --z-base: 0;
-  --z-dropdown: 10;
-  --z-sticky: 20;
-  --z-fixed: 30;
-  --z-modal-backdrop: 40;
-  --z-modal: 50;
-  --z-popover: 60;
-  --z-tooltip: 70;
+  /* Font */
+  --font-primary: 'DM Sans', -apple-system, system-ui, BlinkMacSystemFont, sans-serif;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: 'Object Sans', system-ui, -apple-system, sans-serif;
-  --font-mono: var(--font-geist-mono);
+  --font-sans: 'DM Sans', system-ui, -apple-system, sans-serif;
 }
 
+/* Base Styles */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans);
+  font-family: var(--font-primary);
+  font-weight: 600; /* DM Sans Semibold */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-/* Hide cursor when custom cursor is active */
-.custom-cursor-active {
-  cursor: none !important;
-}
-
-.custom-cursor-active * {
-  cursor: none !important;
-}
-
-/* Ensure interactive elements are properly detected */
-.custom-cursor-active a,
-.custom-cursor-active button,
-.custom-cursor-active [role="button"],
-.custom-cursor-active [onclick],
-.custom-cursor-active .cursor-pointer {
-  position: relative;
-}
-
-/* Allow interaction with links and buttons */
-.custom-cursor-active a,
-.custom-cursor-active button {
-  -webkit-user-select: auto;
-  -moz-user-select: auto;
-  user-select: auto;
-}
-
-/* Optimized fade-in animation for tech badges */
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-    transform: translateY(8px) translateZ(0);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) translateZ(0);
-  }
-}
-
-.animate-fade-in {
-  animation: fade-in 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  transform: translateZ(0); /* Force GPU acceleration */
-  will-change: opacity, transform;
-}
-
-/* Utility class for mono font */
-.font-mono {
-  font-family: var(--font-mono);
 }
 

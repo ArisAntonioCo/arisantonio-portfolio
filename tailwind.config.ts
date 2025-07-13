@@ -12,20 +12,26 @@ export default {
         'xs': '475px',
       },
       colors: {
+        // New light theme colors
+        background: "#E6E6E6",
+        container: "#F5F5F5",
+        foreground: "#000000",
+        "text-secondary": "#666666",
+        
+        // Legacy colors (for compatibility)
         dark: "#0F0F0F",
         light: "#FFFFFF",
         muted: "#8C8C8C",
+        
         accent: {
-          DEFAULT: "#ff4d12",
-          hover: "#E64510",
-          light: "#FF6530",
-          muted: "#ff4d1233",
+          DEFAULT: "#4800FF",
+          hover: "#3600CC",
+          light: "#6B2FFF",
+          muted: "#4800FF33",
         },
-        background: "var(--background)",
-        foreground: "var(--foreground)",
       },
       fontFamily: {
-        sans: ["Object Sans", "system-ui", "-apple-system", "sans-serif"],
+        sans: ["DM Sans", "system-ui", "-apple-system", "sans-serif"],
       },
     },
   },

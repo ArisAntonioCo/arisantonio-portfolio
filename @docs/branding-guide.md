@@ -10,56 +10,58 @@
 
 ## Brand Colors
 
-### Primary Palette
+### Primary Palette (Light Theme)
 ```css
---color-dark: #0F0F0F;      /* Primary Background */
---color-light: #FFFFFF;     /* Primary Text on Dark */
---color-muted: #8C8C8C;     /* Secondary Text */
---color-accent: #FF5500;    /* CTA & Highlights */
+--color-background: #E6E6E6;    /* Primary Background */
+--color-container: #F5F5F5;     /* Container/Card Background */
+--color-text: #000000;          /* Primary Text */
+--color-text-secondary: #666666; /* Secondary Text */
+--color-accent: #000000;        /* CTA & Highlights */
 ```
 
 ### Extended Palette
 ```css
-/* Dark Mode (Default) */
---bg-primary: #0F0F0F;
---bg-secondary: #1A1A1A;
---bg-tertiary: #242424;
+/* Light Mode (Default) */
+--bg-primary: #E6E6E6;
+--bg-secondary: #F5F5F5;
+--bg-tertiary: #FFFFFF;
 
 /* Text Colors */
---text-primary: #FFFFFF;
---text-secondary: #8C8C8C;
---text-accent: #FF5500;
+--text-primary: #000000;
+--text-secondary: #666666;
+--text-accent: #000000;
 
 /* Accent Variations */
---accent-hover: #E64D00;    /* Darker on hover */
---accent-light: #FF6B1A;    /* Lighter variant */
---accent-muted: #FF550033;  /* 20% opacity */
+--accent-hover: #333333;    /* Darker on hover */
+--accent-light: #666666;    /* Lighter variant */
+--accent-muted: #00000033;  /* 20% opacity */
 
 /* Utility Colors */
---border-color: #2A2A2A;
---shadow-color: rgba(0, 0, 0, 0.5);
---overlay: rgba(15, 15, 15, 0.8);
+--border-color: #E0E0E0;
+--shadow-color: rgba(0, 0, 0, 0.1);
+--overlay: rgba(0, 0, 0, 0.3);
 ```
 
 ### Color Usage Guidelines
-- **Dark (#0F0F0F)**: Main background, primary surfaces
-- **Light (#FFFFFF)**: Primary text, icons on dark backgrounds
-- **Muted (#8C8C8C)**: Secondary text, subtitles, metadata, disabled states
-- **Accent (#FF5500)**: CTAs, links, active states, important highlights
+- **Background (#E6E6E6)**: Main background, page background
+- **Container (#F5F5F5)**: Cards, containers, elevated surfaces
+- **Text (#000000)**: Primary text, headings, important content
+- **Text Secondary (#666666)**: Secondary text, subtitles, metadata
+- **Accent (#000000)**: CTAs, links, active states, important highlights
 
 ## Typography
 
 ### Font Family
 ```css
 @font-face {
-  font-family: 'Object Sans';
-  src: url('/fonts/ObjectSans-Regular.otf') format('opentype');
-  font-weight: 400;
+  font-family: 'Anta Trial';
+  src: url('/fonts/AntaTrial-Medium.otf') format('opentype');
+  font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
---font-primary: 'Object Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+--font-primary: 'Anta Trial', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 ```
 
 ### Type Scale
@@ -126,7 +128,7 @@
 ```css
 .btn-solid {
   background: var(--color-accent);
-  color: var(--color-light);
+  color: var(--color-container);
   border: none;
   padding: 12px 24px;
   font-size: 1rem;
@@ -136,7 +138,7 @@
 .btn-solid:hover {
   background: var(--accent-hover);
   transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(255, 85, 0, 0.3);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .btn-solid:active {
@@ -157,7 +159,7 @@
 
 .btn-outline:hover {
   background: var(--color-accent);
-  color: var(--color-light);
+  color: var(--color-container);
   transform: translateY(-2px);
 }
 ```
@@ -165,21 +167,21 @@
 #### 3. Glass Button
 ```css
 .btn-glass {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.05);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: var(--color-light);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: var(--color-text);
   padding: 12px 24px;
   font-size: 1rem;
   transition: all 0.3s ease;
 }
 
 .btn-glass:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.15);
   transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 ```
 
@@ -228,7 +230,7 @@
   left: 50%;
   margin-left: -8px;
   margin-top: -8px;
-  border: 2px solid var(--color-light);
+  border: 2px solid var(--color-text);
   border-top-color: transparent;
   border-radius: 50%;
   animation: button-loading-spinner 0.8s linear infinite;
@@ -277,10 +279,10 @@
 
 /* Glass Card */
 .card-glass {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(0, 0, 0, 0.03);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
   border-radius: 16px;
   padding: var(--space-6);
 }
@@ -307,9 +309,9 @@
 
 /* Glass Input */
 .input-glass {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.05);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 ```
 
@@ -373,10 +375,10 @@
 }
 ```
 
-### 5. Dark Theme First
-- Designed primarily for dark backgrounds
-- Light elements provide contrast
-- Accent color draws attention
+### 5. Light Theme First
+- Designed primarily for light backgrounds
+- Clean, minimal aesthetic
+- Black accent for strong contrast
 
 ## Implementation Examples
 
@@ -387,17 +389,18 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        dark: '#0F0F0F',
-        light: '#FFFFFF',
-        muted: '#8C8C8C',
+        background: '#E6E6E6',
+        container: '#F5F5F5',
+        foreground: '#000000',
+        'text-secondary': '#666666',
         accent: {
-          DEFAULT: '#FF5500',
-          hover: '#E64D00',
-          light: '#FF6B1A',
+          DEFAULT: '#000000',
+          hover: '#333333',
+          light: '#666666',
         }
       },
       fontFamily: {
-        sans: ['Object Sans', 'system-ui', 'sans-serif'],
+        sans: ['Anta Trial', 'system-ui', 'sans-serif'],
       }
     }
   }
@@ -408,26 +411,27 @@ module.exports = {
 ```css
 :root {
   /* Colors */
-  --color-dark: #0F0F0F;
-  --color-light: #FFFFFF;
-  --color-muted: #8C8C8C;
-  --color-accent: #FF5500;
+  --color-background: #E6E6E6;
+  --color-container: #F5F5F5;
+  --color-text: #000000;
+  --color-text-secondary: #666666;
+  --color-accent: #000000;
   
   /* Font */
-  --font-primary: 'Object Sans', sans-serif;
+  --font-primary: 'Anta Trial', sans-serif;
 }
 ```
 
 ## Usage Guidelines
 
 ### Do's
-- Use accent color sparingly for maximum impact
+- Use black accent strategically for emphasis
 - Maintain consistent spacing throughout
-- Ensure text is readable with appropriate contrast
-- Use glass effects on dark backgrounds only
+- Ensure sufficient contrast between elements
+- Use subtle shadows for depth
 
 ### Don'ts
 - Don't use more than one accent color
-- Avoid using pure black (#000000)
+- Avoid using pure white (#FFFFFF) as background
 - Don't mix different button styles in the same context
-- Avoid small text (< 14px) in muted color
+- Avoid small text (< 14px) in light gray
