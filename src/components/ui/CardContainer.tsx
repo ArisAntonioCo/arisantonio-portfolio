@@ -1,34 +1,20 @@
 "use client";
 
 import { ReactNode } from "react";
-import { COLORS, RADII } from "@/lib/constants/design-tokens";
+import { twMerge } from "tailwind-merge";
 
 interface CardContainerProps {
   children: ReactNode;
   className?: string;
-  backgroundColor?: string;
-  borderRadius?: string;
-  padding?: string;
-  style?: React.CSSProperties;
 }
 
 export const CardContainer = ({
   children,
   className = "",
-  backgroundColor = COLORS.container,
-  borderRadius = RADII.xl,
-  padding = "32px",
-  style = {},
 }: CardContainerProps) => {
   return (
     <div
-      className={`${className}`}
-      style={{
-        backgroundColor,
-        borderRadius,
-        padding,
-        ...style,
-      }}
+      className={twMerge("bg-container rounded-xl p-8", className)}
     >
       {children}
     </div>

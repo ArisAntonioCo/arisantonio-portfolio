@@ -12,7 +12,7 @@ export default {
         'xs': '475px',
       },
       colors: {
-        // New light theme colors
+        // Theme colors
         background: "#E6E6E6",
         container: "#F5F5F5",
         foreground: "#000000",
@@ -32,6 +32,12 @@ export default {
       },
       fontFamily: {
         sans: ["DM Sans", "system-ui", "-apple-system", "sans-serif"],
+      },
+      borderRadius: {
+        'sm': '8px',
+        'md': '12px',
+        'lg': '16px',
+        'xl': '18px',
       },
     },
   },

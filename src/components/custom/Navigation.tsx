@@ -1,7 +1,5 @@
 "use client";
 
-import { COLORS } from "@/lib/constants/design-tokens";
-
 interface NavigationItem {
   label: string;
   href: string;
@@ -13,10 +11,7 @@ interface NavigationProps {
   showDividers?: boolean;
   className?: string;
   linkClassName?: string;
-  dividerColor?: string;
-  textColor?: string;
-  fontSize?: string;
-  spacing?: string;
+  isLight?: boolean;
 }
 
 export const Navigation = ({
@@ -25,10 +20,7 @@ export const Navigation = ({
   showDividers = true,
   className = "",
   linkClassName = "",
-  dividerColor = "rgba(255, 255, 255, 0.2)",
-  textColor = "white",
-  fontSize = "18px",
-  spacing = orientation === "vertical" ? "py-3" : "px-4",
+  isLight = false,
 }: NavigationProps) => {
   if (orientation === "horizontal") {
     return (
@@ -37,8 +29,7 @@ export const Navigation = ({
           <a
             key={item.label}
             href={item.href}
-            className={`hover:opacity-100 transition-opacity ${linkClassName}`}
-            style={{ color: textColor, fontSize }}
+            className={`hover:opacity-100 transition-opacity text-lg ${isLight ? 'text-white' : 'text-foreground'} ${linkClassName}`}
           >
             {item.label}
           </a>
@@ -53,18 +44,13 @@ export const Navigation = ({
         <div key={item.label}>
           <a
             href={item.href}
-            className={`block hover:opacity-80 transition-opacity ${spacing} ${linkClassName}`}
-            style={{ color: textColor, fontSize }}
+            className={`block hover:opacity-80 transition-opacity py-3 text-lg ${isLight ? 'text-white' : 'text-foreground'} ${linkClassName}`}
           >
             {item.label}
           </a>
           {showDividers && index < items.length - 1 && (
             <div
-              className="w-full"
-              style={{
-                height: "1px",
-                backgroundColor: dividerColor,
-              }}
+              className={`w-full h-px ${isLight ? 'bg-white/20' : 'bg-foreground/20'}`}
             />
           )}
         </div>

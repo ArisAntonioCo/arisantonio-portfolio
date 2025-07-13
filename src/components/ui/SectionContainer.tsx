@@ -2,16 +2,13 @@
 
 import { motion, Variants } from "framer-motion";
 import { ReactNode } from "react";
-import { COLORS } from "@/lib/constants/design-tokens";
 
 interface SectionContainerProps {
   children: ReactNode;
   className?: string;
-  backgroundColor?: string;
   animate?: boolean;
   animationDelay?: number;
   fullHeight?: boolean;
-  style?: React.CSSProperties;
 }
 
 const containerVariants: Variants = {
@@ -27,11 +24,9 @@ const containerVariants: Variants = {
 export const SectionContainer = ({
   children,
   className = "",
-  backgroundColor = COLORS.background,
   animate = true,
   animationDelay = 0,
   fullHeight = false,
-  style = {},
 }: SectionContainerProps) => {
   const Component = animate ? motion.section : "section";
   
@@ -45,7 +40,6 @@ export const SectionContainer = ({
   return (
     <Component
       className={`w-full overflow-hidden ${fullHeight ? "min-h-screen" : ""} ${className}`}
-      style={{ backgroundColor, ...style }}
       {...props}
     >
       {children}

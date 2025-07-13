@@ -1,7 +1,6 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import { COLORS, RADII, TYPOGRAPHY } from "@/lib/constants/design-tokens";
 import { 
   SectionContainer, 
   CardContainer, 
@@ -53,10 +52,7 @@ const HeroSection = () => {
       {/* Desktop Layout */}
       <div className="hidden sm:block w-full">
         <motion.div 
-          className="w-full flex gap-1.5"
-          style={{ 
-            height: "500px",
-          }}
+          className="w-full flex gap-1.5 h-[500px]"
           variants={itemVariants}
         >
           {/* Main Content - 70% */}
@@ -67,8 +63,6 @@ const HeroSection = () => {
             <div className="flex items-start">
               <Greeting 
                 name="Aris"
-                textSize="36px"
-                emojiSize={36}
               />
             </div>
             
@@ -77,8 +71,6 @@ const HeroSection = () => {
               <Clock 
                 inline={true}
                 showTimezone={true}
-                textSize="20px"
-                timezoneSize="14px"
               />
             </div>
             
@@ -99,15 +91,13 @@ const HeroSection = () => {
           
           {/* Navigation Sidebar - 30% */}
           <CardContainer
-            className="flex-[3] flex flex-col justify-start"
-            backgroundColor={COLORS.accent.default as string}
+            className="flex-[3] flex flex-col justify-start bg-accent"
           >
             <Navigation 
               items={navigationItems}
               orientation="vertical"
               showDividers={true}
-              textColor="white"
-              fontSize="18px"
+              isLight={true}
             />
           </CardContainer>
         </motion.div>
@@ -120,24 +110,17 @@ const HeroSection = () => {
           variants={itemVariants}
         >
           <CardContainer
-            className="flex flex-col"
-            borderRadius={RADII.lg}
-            padding="24px"
-            style={{ height: "calc(100vh - 100px)" }}
+            className="flex flex-col h-[calc(100vh-100px)]"
           >
             {/* Mobile Header - Greeting and Clock */}
             <div className="flex flex-col space-y-4 mb-8">
               <Greeting 
                 name="Aris"
-                textSize="24px"
-                emojiSize={24}
               />
               
               <Clock 
                 inline={true}
                 showTimezone={true}
-                textSize="16px"
-                timezoneSize="12px"
               />
             </div>
             
@@ -154,8 +137,6 @@ const HeroSection = () => {
                 items={navigationItems}
                 orientation="horizontal"
                 showDividers={false}
-                textColor={COLORS.foreground}
-                fontSize="16px"
                 className="opacity-60"
               />
             </div>

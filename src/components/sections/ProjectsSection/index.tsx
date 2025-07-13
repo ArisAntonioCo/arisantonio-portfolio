@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { projects } from "@/data/projects";
-import { COLORS, SPACING, RADII, TYPOGRAPHY } from "@/lib/constants/design-tokens";
 
 const ProjectsSection = () => {
   const containerVariants = {
@@ -33,8 +32,7 @@ const ProjectsSection = () => {
 
   return (
     <motion.section 
-      className="w-full" 
-      style={{ marginTop: "6px" }}
+      className="w-full mt-1.5" 
       initial="hidden"
       animate="visible"
       variants={containerVariants}
@@ -43,12 +41,7 @@ const ProjectsSection = () => {
         {projects.slice(0, 4).map((project, index) => (
           <motion.div
             key={project.id}
-            className="block relative overflow-hidden group cursor-pointer"
-            style={{
-              backgroundColor: COLORS.container,
-              borderRadius: RADII.xl,
-              aspectRatio: "16 / 9",
-            }}
+            className="block relative overflow-hidden group cursor-pointer bg-container rounded-xl aspect-video"
             variants={itemVariants}
           >
             {/* Background - White fallback, image or video */}
@@ -64,13 +57,8 @@ const ProjectsSection = () => {
               </video>
             ) : (
               <div
-                className="absolute inset-0 transition-transform duration-300 group-hover:scale-105"
-                style={{
-                  backgroundColor: project.image ? undefined : "#FFFFFF",
-                  backgroundImage: project.image ? `url(${project.image})` : undefined,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                }}
+                className={`absolute inset-0 transition-transform duration-300 group-hover:scale-105 bg-cover bg-center ${!project.image ? 'bg-white' : ''}`}
+                style={project.image ? { backgroundImage: `url(${project.image})` } : {}}
               />
             )}
             
@@ -83,31 +71,18 @@ const ProjectsSection = () => {
             <div className="absolute top-0 left-0 right-0 flex justify-between items-center px-3 py-2 sm:px-5 sm:py-3">
               <div className="flex items-center gap-3">
                 <h3
-                  className="font-normal"
-                  style={{
-                    fontSize: "12px",
-                    color: project.image ? "#FFFFFF" : COLORS.foreground,
-                  }}
+                  className={`font-normal text-xs ${project.image ? "text-white" : "text-foreground"}`}
                 >
                   {project.name}
                 </h3>
                 <span
-                  className="font-normal"
-                  style={{
-                    fontSize: "12px",
-                    color: project.image ? "#FFFFFF" : COLORS.foreground,
-                    opacity: 0.6,
-                  }}
+                  className={`font-normal text-xs ${project.image ? "text-white" : "text-foreground"} opacity-60`}
                 >
                   {project.category}
                 </span>
               </div>
               <span
-                className="font-normal"
-                style={{
-                  fontSize: "12px",
-                  color: project.image ? "#FFFFFF" : COLORS.foreground,
-                }}
+                className={`font-normal text-xs ${project.image ? "text-white" : "text-foreground"}`}
               >
                 {String(4 - index).padStart(2, '0')}
               </span>

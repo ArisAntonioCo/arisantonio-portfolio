@@ -2,15 +2,12 @@
 
 import { useState, useEffect } from "react";
 import { EmojiProvider, Emoji } from "react-apple-emojis";
-import { COLORS } from "@/lib/constants/design-tokens";
 
 interface GreetingProps {
   name: string;
   showEmoji?: boolean;
   emojiName?: string;
   emojiSize?: number;
-  textSize?: string;
-  color?: string;
   className?: string;
 }
 
@@ -19,8 +16,6 @@ export const Greeting = ({
   showEmoji = true,
   emojiName = "waving-hand",
   emojiSize = 36,
-  textSize = "36px",
-  color = COLORS.foreground,
   className = "",
 }: GreetingProps) => {
   // Lazy load emoji data to avoid Turbopack issues
@@ -36,7 +31,7 @@ export const Greeting = ({
     // Return without emoji while loading
     return (
       <div className={`flex items-center gap-3 ${className}`}>
-        <span style={{ fontSize: textSize, color }}>
+        <span className="text-foreground text-4xl">
           Hello, I am {name}
         </span>
       </div>
@@ -46,7 +41,7 @@ export const Greeting = ({
   return (
     <EmojiProvider data={emojiData}>
       <div className={`flex items-center gap-3 ${className}`}>
-        <span style={{ fontSize: textSize, color }}>
+        <span className="text-foreground text-4xl">
           Hello, I am {name}
         </span>
         {showEmoji && <Emoji name={emojiName} width={emojiSize} />}

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { ErrorBoundary } from "@/components/ui/ErrorBoundary";
-import { SPACING } from "@/lib/constants/design-tokens";
 import "./globals.css";
 
 export const metadata: Metadata = {

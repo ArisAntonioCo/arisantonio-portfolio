@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { COLORS, TYPOGRAPHY } from "@/lib/constants/design-tokens";
 
 interface ClockProps {
   timezone?: string;
@@ -9,9 +8,6 @@ interface ClockProps {
   showTimezone?: boolean;
   showSeconds?: boolean;
   className?: string;
-  textSize?: string;
-  timezoneSize?: string;
-  color?: string;
   inline?: boolean;
 }
 
@@ -21,9 +17,6 @@ export const Clock = ({
   showTimezone = true,
   showSeconds = true,
   className = "",
-  textSize = "20px",
-  timezoneSize = "14px",
-  color = COLORS.foreground,
   inline = false,
 }: ClockProps) => {
   const [time, setTime] = useState("");
@@ -67,11 +60,11 @@ export const Clock = ({
     return (
       <div className={`flex items-center gap-2 ${className}`}>
         {showTimezone && (
-          <span style={{ fontSize: timezoneSize, color, opacity: 0.6 }}>
+          <span className="text-foreground opacity-60 text-sm">
             {getTimezoneAbbr()}
           </span>
         )}
-        <span style={{ fontSize: textSize, color, fontWeight: "500" }}>
+        <span className="text-foreground font-medium text-xl">
           {time}
         </span>
       </div>
@@ -81,11 +74,11 @@ export const Clock = ({
   return (
     <div className={`flex flex-col ${className}`}>
       {showTimezone && (
-        <span style={{ fontSize: timezoneSize, color, opacity: 0.6 }}>
+        <span className="text-foreground opacity-60 text-sm">
           {getTimezoneAbbr()}
         </span>
       )}
-      <span style={{ fontSize: textSize, color, fontWeight: "600" }}>
+      <span className="text-foreground font-semibold text-xl">
         {time}
       </span>
     </div>
