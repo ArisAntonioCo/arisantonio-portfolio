@@ -1,24 +1,55 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { IconButton } from "@/components/ui/IconButton";
 import { ArrowUpRightIcon } from "@/components/icons";
 import { COLORS, SPACING, RADII, TYPOGRAPHY } from "@/lib/constants/design-tokens";
 
 const HeroSection = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: 40
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: [0.22, 1, 0.36, 1]
+      }
+    }
+  };
+
   return (
-    <section 
-      className="h-[calc(100vh-200px)] overflow-hidden flex items-start"
+    <motion.section 
+      className="w-full overflow-hidden flex items-start"
       style={{ backgroundColor: COLORS.background }}
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
     >
       {/* Desktop Layout */}
-      <div className="hidden sm:block w-full h-full">
-        <div 
-          className="h-full w-full grid grid-cols-2 grid-rows-2 gap-8"
+      <div className="hidden sm:block w-full">
+        <motion.div 
+          className="w-full grid grid-cols-2 grid-rows-2 gap-8"
           style={{ 
+            height: "500px",
             backgroundColor: COLORS.container,
             borderRadius: RADII.xl,
-            padding: SPACING.section,
+            padding: "24px",
           }}
+          variants={itemVariants}
         >
           {/* Top Section - CTA */}
           <div className="col-span-2">
@@ -52,18 +83,20 @@ const HeroSection = () => {
               onClick={() => console.log("Button clicked")}
             />
           </div>
-        </div>
+        </motion.div>
       </div>
 
       {/* Mobile Layout */}
-      <div className="block sm:hidden w-full h-full">
-        <div 
-          className="h-full w-full grid grid-cols-1 grid-rows-2 gap-8"
+      <div className="block sm:hidden w-full">
+        <motion.div 
+          className="w-full grid grid-cols-1 grid-rows-2 gap-8"
           style={{ 
+            height: "400px", 
             backgroundColor: COLORS.container,
-            borderRadius: RADII.xl,
-            padding: SPACING.section,
+            borderRadius: RADII.lg,
+            padding: "20px",
           }}
+          variants={itemVariants}
         >
           {/* Top Section - CTA */}
           <div>
@@ -81,7 +114,7 @@ const HeroSection = () => {
           <div className="flex items-end justify-between">
             <h1 
               className="font-normal leading-tight flex-1"
-              style={{ fontSize: TYPOGRAPHY.fontSize.headline }}
+              style={{ fontSize: "20px" }}
             >
               <span style={{ color: COLORS.foreground }}>I am the bridge between concept and creation, designing user-centric solutions and building them with precision. My passion lies in transforming visions into tangible, impactful digital products.</span>
             </h1>
@@ -92,9 +125,9 @@ const HeroSection = () => {
               className="ml-4 flex-shrink-0"
             />
           </div>
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

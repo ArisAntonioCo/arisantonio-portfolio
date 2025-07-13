@@ -1,9 +1,9 @@
 "use client";
 
 import HeroSection from "@/components/sections/HeroSection";
+import ProjectsSection from "@/components/sections/ProjectsSection";
 import { PhilosophySection } from "@/components/sections/PhilosophySection";
 import { TechnicalStackSection } from "@/components/sections/TechnicalStackSection";
-import { ProjectsSection } from "@/components/sections/ProjectsSection";
 import { ExperienceSection } from "@/components/sections/ExperienceSection";
 import { CustomCursor } from "@/components/ui/CustomCursor";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
@@ -62,6 +62,8 @@ export const HomePageView = () => {
       <div ref={heroRef}>
         <HeroSection />
       </div>
+      
+      <ProjectsSection />
       
       {/* All other sections hidden for now */}
     </>

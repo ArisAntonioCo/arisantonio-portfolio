@@ -11,7 +11,11 @@
       "Bash(npm run type-check:*)",
       "Bash(grep:*)",
       "Bash(git remote set-url:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git config:*)",
+      "Bash(git push:*)",
+      "WebFetch(domain:www.carlhauser.com)"
     ],
     "deny": []
   }
