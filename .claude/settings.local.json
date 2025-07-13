@@ -15,7 +15,9 @@
       "Bash(git commit:*)",
       "Bash(git config:*)",
       "Bash(git push:*)",
-      "WebFetch(domain:www.carlhauser.com)"
+      "WebFetch(domain:www.carlhauser.com)",
+      "Bash(npm run lint)",
+      "Bash(mv:*)"
     ],
     "deny": []
   }

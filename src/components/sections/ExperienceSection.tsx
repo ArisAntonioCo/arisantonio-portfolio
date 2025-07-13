@@ -1,6 +1,6 @@
 "use client";
 
-import { WorkExperienceCard } from "@/components/ui/WorkExperienceCard";
+import { WorkExperienceCard } from "@/components/custom";
 import { WorkExperience } from "@/types/experience";
 import { useEffect } from "react";
 

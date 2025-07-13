@@ -1,12 +1,26 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { IconButton } from "@/components/ui/IconButton";
-import { ArrowUpRightIcon } from "@/components/icons";
-import { COLORS, SPACING, RADII, TYPOGRAPHY } from "@/lib/constants/design-tokens";
+import { motion, Variants } from "framer-motion";
+import { COLORS, RADII, TYPOGRAPHY } from "@/lib/constants/design-tokens";
+import { 
+  SectionContainer, 
+  CardContainer, 
+  Headline,
+} from "@/components/ui";
+import {
+  Clock,
+  Greeting,
+  Navigation,
+} from "@/components/custom";
 
 const HeroSection = () => {
-  const containerVariants = {
+  const navigationItems = [
+    { label: "About", href: "#about" },
+    { label: "Experience", href: "#experience" },
+    { label: "Hobbies", href: "#hobbies" },
+  ];
+
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -16,7 +30,7 @@ const HeroSection = () => {
     }
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { 
       opacity: 0, 
       y: 40
@@ -26,108 +40,129 @@ const HeroSection = () => {
       y: 0,
       transition: {
         duration: 0.5,
-        ease: [0.22, 1, 0.36, 1]
+        ease: "easeInOut"
       }
     }
   };
 
   return (
-    <motion.section 
-      className="w-full overflow-hidden flex items-start"
-      style={{ backgroundColor: COLORS.background }}
-      initial="hidden"
-      animate="visible"
-      variants={containerVariants}
+    <SectionContainer 
+      className="flex items-start"
+      animate={true}
     >
       {/* Desktop Layout */}
       <div className="hidden sm:block w-full">
         <motion.div 
-          className="w-full grid grid-cols-2 grid-rows-2 gap-8"
+          className="w-full flex gap-1.5"
           style={{ 
             height: "500px",
-            backgroundColor: COLORS.container,
-            borderRadius: RADII.xl,
-            padding: "24px",
           }}
           variants={itemVariants}
         >
-          {/* Top Section - CTA */}
-          <div className="col-span-2">
-            <a 
-              href="#contact"
-              className="inline-flex items-center gap-1.5 sm:gap-2 transition-colors"
-              style={{ color: COLORS.foreground }}
-              onMouseEnter={(e) => e.currentTarget.style.color = COLORS.accent.default}
-              onMouseLeave={(e) => e.currentTarget.style.color = COLORS.foreground}
-            >
-              <span className="text-sm sm:text-base">Let&apos;s Talk</span>
-              <ArrowUpRightIcon size={16} className="sm:w-5 sm:h-5" />
-            </a>
-          </div>
+          {/* Main Content - 70% */}
+          <CardContainer 
+            className="flex-[7] grid grid-cols-2 grid-rows-2 gap-8"
+          >
+            {/* Top Left - Greeting */}
+            <div className="flex items-start">
+              <Greeting 
+                name="Aris"
+                textSize="36px"
+                emojiSize={36}
+              />
+            </div>
+            
+            {/* Top Right - Clock */}
+            <div className="flex justify-end items-start">
+              <Clock 
+                inline={true}
+                showTimezone={true}
+                textSize="20px"
+                timezoneSize="14px"
+              />
+            </div>
+            
+            {/* Bottom - Headline with more space */}
+            <div className="col-span-2 grid grid-cols-[1.5fr_0.5fr] gap-8">
+              <div className="flex items-end">
+                <Headline>
+                  I am the bridge between concept and creation, designing user-centric solutions and building them with precision. My passion lies in transforming visions into tangible, impactful digital products.
+                </Headline>
+              </div>
+              
+              {/* Bottom Right - Space for future content */}
+              <div className="flex items-end justify-end">
+                {/* Space reserved for additional content */}
+              </div>
+            </div>
+          </CardContainer>
           
-          {/* Bottom Left - Headline */}
-          <div className="flex items-end">
-            <h1 
-              className="font-normal leading-tight"
-              style={{ fontSize: TYPOGRAPHY.fontSize.headline }}
-            >
-              <span style={{ color: COLORS.foreground }}>I am the bridge between concept and creation, designing user-centric solutions and building them with precision. My passion lies in transforming visions into tangible, impactful digital products.</span>
-            </h1>
-          </div>
-          
-          {/* Bottom Right - Action Button */}
-          <div className="flex items-end justify-end">
-            <IconButton
-              icon={<ArrowUpRightIcon className="text-white" />}
-              ariaLabel="View work"
-              onClick={() => console.log("Button clicked")}
+          {/* Navigation Sidebar - 30% */}
+          <CardContainer
+            className="flex-[3] flex flex-col justify-start"
+            backgroundColor={COLORS.accent.default as string}
+          >
+            <Navigation 
+              items={navigationItems}
+              orientation="vertical"
+              showDividers={true}
+              textColor="white"
+              fontSize="18px"
             />
-          </div>
+          </CardContainer>
         </motion.div>
       </div>
 
       {/* Mobile Layout */}
       <div className="block sm:hidden w-full">
         <motion.div 
-          className="w-full grid grid-cols-1 grid-rows-2 gap-8"
-          style={{ 
-            height: "400px", 
-            backgroundColor: COLORS.container,
-            borderRadius: RADII.lg,
-            padding: "20px",
-          }}
+          className="w-full"
           variants={itemVariants}
         >
-          {/* Top Section - CTA */}
-          <div>
-            <a 
-              href="#contact"
-              className="inline-flex items-center gap-1.5 transition-colors"
-              style={{ color: COLORS.foreground }}
-            >
-              <span className="text-sm">Let&apos;s Talk</span>
-              <ArrowUpRightIcon size={14} />
-            </a>
-          </div>
-          
-          {/* Bottom Section - Headline with Button */}
-          <div className="flex items-end justify-between">
-            <h1 
-              className="font-normal leading-tight flex-1"
-              style={{ fontSize: "20px" }}
-            >
-              <span style={{ color: COLORS.foreground }}>I am the bridge between concept and creation, designing user-centric solutions and building them with precision. My passion lies in transforming visions into tangible, impactful digital products.</span>
-            </h1>
-            <IconButton
-              icon={<ArrowUpRightIcon className="text-white" />}
-              ariaLabel="View work"
-              onClick={() => console.log("Button clicked")}
-              className="ml-4 flex-shrink-0"
-            />
-          </div>
+          <CardContainer
+            className="flex flex-col"
+            borderRadius={RADII.lg}
+            padding="24px"
+            style={{ height: "calc(100vh - 100px)" }}
+          >
+            {/* Mobile Header - Greeting and Clock */}
+            <div className="flex flex-col space-y-4 mb-8">
+              <Greeting 
+                name="Aris"
+                textSize="24px"
+                emojiSize={24}
+              />
+              
+              <Clock 
+                inline={true}
+                showTimezone={true}
+                textSize="16px"
+                timezoneSize="12px"
+              />
+            </div>
+            
+            {/* Mobile Headline */}
+            <div className="flex-1 flex items-center">
+              <Headline size="sm" className="font-normal leading-relaxed">
+                I am the bridge between concept and creation, designing user-centric solutions and building them with precision. My passion lies in transforming visions into tangible, impactful digital products.
+              </Headline>
+            </div>
+            
+            {/* Mobile Navigation */}
+            <div className="mt-8">
+              <Navigation 
+                items={navigationItems}
+                orientation="horizontal"
+                showDividers={false}
+                textColor={COLORS.foreground}
+                fontSize="16px"
+                className="opacity-60"
+              />
+            </div>
+          </CardContainer>
         </motion.div>
       </div>
-    </motion.section>
+    </SectionContainer>
   );
 };
 
