@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
+import { DM_Sans } from "next/font/google";
 import { ErrorBoundary } from "@/components/ui/ErrorBoundary";
 import "./globals.css";
+
+const dmSans = DM_Sans({ 
+  subsets: ["latin"],
+  weight: ["600"],
+  variable: "--font-dm-sans",
+});
 
 export const metadata: Metadata = {
   title: "Aris Antonio - UI/UX Designer & Frontend Developer",
@@ -68,12 +75,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@600&display=swap" rel="stylesheet" />
-      </head>
-      <body className="antialiased gap-0">
+      <body className={`${dmSans.variable} font-sans antialiased gap-0`}>
         <ErrorBoundary>
           <main className="min-h-screen px-4 py-6 sm:px-8 sm:py-10 lg:px-16 lg:py-16 xl:px-24 xl:py-20">
             {children}

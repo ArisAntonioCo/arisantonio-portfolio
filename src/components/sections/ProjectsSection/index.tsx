@@ -57,7 +57,7 @@ const ProjectsSection = () => {
               </video>
             ) : (
               <div
-                className={`absolute inset-0 transition-transform duration-300 group-hover:scale-105 bg-cover bg-center ${!project.image ? 'bg-white' : ''}`}
+                className={`absolute inset-0 transition-transform duration-300 group-hover:scale-105 bg-cover bg-center ${!project.image ? 'bg-container' : ''}`}
                 style={project.image ? { backgroundImage: `url(${project.image})` } : {}}
               />
             )}

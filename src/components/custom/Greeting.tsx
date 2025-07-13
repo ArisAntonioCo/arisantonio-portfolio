@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { EmojiProvider, Emoji } from "react-apple-emojis";
+import { EmojiProvider, Emoji, type EmojiData } from "react-apple-emojis";
 
 interface GreetingProps {
   name: string;
@@ -19,11 +19,11 @@ export const Greeting = ({
   className = "",
 }: GreetingProps) => {
   // Lazy load emoji data to avoid Turbopack issues
-  const [emojiData, setEmojiData] = useState<any>(null);
+  const [emojiData, setEmojiData] = useState<EmojiData | null>(null);
   
   useEffect(() => {
     import("react-apple-emojis/src/data.json").then((data) => {
-      setEmojiData(data.default || data);
+      setEmojiData((data.default || data) as EmojiData);
     });
   }, []);
 
