@@ -129,3 +129,8 @@ body {
   will-change: opacity, transform;
 }
 
+/* Utility class for mono font */
+.font-mono {
+  font-family: var(--font-mono);
+}
+

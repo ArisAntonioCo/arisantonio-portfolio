@@ -22,7 +22,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 md:gap-8 lg:gap-12">
           {/* Title Section */}
           <div className="md:flex-shrink-0">
-            <p className="text-xs text-[#8C8C8C] mb-2">Project</p>
+            <p className="text-xs text-[#8C8C8C] mb-2 font-mono">Project</p>
             <h1 className="text-xl sm:text-2xl md:text-3xl font-normal text-white">
               {project.name}
             </h1>
@@ -30,7 +30,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
           
           {/* Roles Section */}
           <div className="md:flex-shrink-0">
-            <p className="text-xs text-[#8C8C8C] mb-2">Role</p>
+            <p className="text-xs text-[#8C8C8C] mb-2 font-mono">Role</p>
             <div className="flex flex-wrap gap-2">
               {project.roles.map((role, index) => (
                 <span
@@ -45,7 +45,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
           
           {/* Description Section */}
           <div className="md:flex-1 md:max-w-2xl">
-            <p className="text-xs text-[#8C8C8C] mb-2">Description</p>
+            <p className="text-xs text-[#8C8C8C] mb-2 font-mono">Description</p>
             <p className="text-sm sm:text-base text-white font-normal">
               {project.description}
             </p>
