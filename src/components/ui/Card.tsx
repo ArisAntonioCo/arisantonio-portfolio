@@ -3,15 +3,15 @@
 import { ReactNode } from "react";
 import { twMerge } from "tailwind-merge";
 
-interface CardContainerProps {
+interface CardProps {
   children: ReactNode;
   className?: string;
 }
 
-export const CardContainer = ({
+export const Card = ({
   children,
   className = "",
-}: CardContainerProps) => {
+}: CardProps) => {
   return (
     <div
       className={twMerge("bg-container rounded-xl p-8", className)}

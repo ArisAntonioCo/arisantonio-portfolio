@@ -46,7 +46,7 @@ const CaseStudiesSection = () => {
               variants={itemVariants}
             >
               {/* Background - Container color fallback, image or video */}
-              {caseStudy.image && caseStudy.image.endsWith('.mp4') ? (
+              {caseStudy.thumbnail && caseStudy.thumbnail.endsWith('.mp4') ? (
                 <video
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                   autoPlay
@@ -54,17 +54,17 @@ const CaseStudiesSection = () => {
                   muted
                   playsInline
                 >
-                  <source src={caseStudy.image} type="video/mp4" />
+                  <source src={caseStudy.thumbnail} type="video/mp4" />
                 </video>
               ) : (
                 <div
-                  className={`absolute inset-0 transition-transform duration-300 group-hover:scale-105 bg-cover bg-center ${!caseStudy.image ? 'bg-container' : ''}`}
-                  style={caseStudy.image ? { backgroundImage: `url(${caseStudy.image})` } : {}}
+                  className={`absolute inset-0 transition-transform duration-300 group-hover:scale-105 bg-cover bg-center ${!caseStudy.thumbnail ? 'bg-container' : ''}`}
+                  style={caseStudy.thumbnail ? { backgroundImage: `url(${caseStudy.thumbnail})` } : {}}
                 />
               )}
               
               {/* Dark overlay for video/image backgrounds */}
-              {caseStudy.image && (
+              {caseStudy.thumbnail && (
                 <div className="absolute inset-0 bg-black/40" />
               )}
               
@@ -72,18 +72,18 @@ const CaseStudiesSection = () => {
               <div className="absolute top-0 left-0 right-0 flex justify-between items-center px-3 py-2 sm:px-5 sm:py-3">
                 <div className="flex items-center gap-3">
                   <h3
-                    className={`font-normal text-xs ${caseStudy.image ? "text-white" : "text-foreground"}`}
+                    className={`font-normal text-xs ${caseStudy.thumbnail ? "text-white" : "text-foreground"}`}
                   >
                     {caseStudy.name}
                   </h3>
                   <span
-                    className={`font-normal text-xs ${caseStudy.image ? "text-white" : "text-foreground"} opacity-60`}
+                    className={`font-normal text-xs ${caseStudy.thumbnail ? "text-white" : "text-foreground"} opacity-60`}
                   >
                     {caseStudy.category}
                   </span>
                 </div>
                 <span
-                  className={`font-normal text-xs ${caseStudy.image ? "text-white" : "text-foreground"}`}
+                  className={`font-normal text-xs ${caseStudy.thumbnail ? "text-white" : "text-foreground"}`}
                 >
                   {String(4 - index).padStart(2, '0')}
                 </span>

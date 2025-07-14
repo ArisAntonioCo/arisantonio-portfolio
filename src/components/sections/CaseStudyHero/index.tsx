@@ -2,7 +2,7 @@
 
 import { motion, Variants } from "framer-motion";
 import { CaseStudy } from "@/types/case-study";
-import { SectionContainer, CardContainer, Headline, Badge } from "@/components/ui";
+import { SectionContainer, Card, Headline, Badge } from "@/components/ui";
 
 interface CaseStudyHeroProps {
   caseStudy: CaseStudy;
@@ -32,7 +32,7 @@ const CaseStudyHero = ({ caseStudy }: CaseStudyHeroProps) => {
         animate="visible"
         variants={itemVariants}
       >
-        <CardContainer className="flex flex-col gap-8 h-full">
+        <Card className="flex flex-col gap-8 h-full">
           {/* Title and Category */}
           <div className="flex flex-col gap-2">
             <span className="text-text-secondary text-sm">{caseStudy.category}</span>
@@ -60,7 +60,7 @@ const CaseStudyHero = ({ caseStudy }: CaseStudyHeroProps) => {
               ))}
             </div>
           </div>
-        </CardContainer>
+        </Card>
       </motion.div>
     </SectionContainer>
   );

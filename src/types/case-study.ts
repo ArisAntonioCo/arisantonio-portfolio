@@ -8,8 +8,8 @@ export interface CaseStudy {
   overview: string;
   problem: string;
   solution: string;
-  image: string;
-  images: string[];
+  thumbnail: string;
+  media: string[];
   variant: CaseStudyVariant;
   category: string;
 }

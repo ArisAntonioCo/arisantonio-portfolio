@@ -2,7 +2,7 @@
 
 import { motion, Variants } from "framer-motion";
 import { CaseStudy } from "@/types/case-study";
-import { SectionContainer, CardContainer } from "@/components/ui";
+import { SectionContainer, Card } from "@/components/ui";
 
 interface CaseStudyContentProps {
   caseStudy: CaseStudy;
@@ -36,16 +36,16 @@ const CaseStudyContent = ({ caseStudy }: CaseStudyContentProps) => {
   };
 
   return (
-    <motion.section 
-      className="w-full mt-1.5"
-      initial="hidden"
-      animate="visible"
-      variants={containerVariants}
-    >
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-1.5">
+    <SectionContainer animate={false}>
+      <motion.div 
+        className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-1.5"
+        initial="hidden"
+        animate="visible"
+        variants={containerVariants}
+      >
         {/* Problem Section */}
         <motion.div variants={itemVariants}>
-          <div className="relative bg-container rounded-xl aspect-video flex flex-col justify-between p-3 sm:p-5">
+          <Card className="aspect-video flex flex-col justify-between p-3 sm:p-5">
             {/* Header */}
             <div className="flex justify-between items-center">
               <h3 className="font-normal text-xs text-foreground">
@@ -59,12 +59,12 @@ const CaseStudyContent = ({ caseStudy }: CaseStudyContentProps) => {
                 {caseStudy.problem}
               </p>
             </div>
-          </div>
+          </Card>
         </motion.div>
 
         {/* Solution Section */}
         <motion.div variants={itemVariants}>
-          <div className="relative bg-container rounded-xl aspect-video flex flex-col justify-between p-3 sm:p-5">
+          <Card className="aspect-video flex flex-col justify-between p-3 sm:p-5">
             {/* Header */}
             <div className="flex justify-between items-center">
               <h3 className="font-normal text-xs text-foreground">
@@ -78,10 +78,10 @@ const CaseStudyContent = ({ caseStudy }: CaseStudyContentProps) => {
                 {caseStudy.solution}
               </p>
             </div>
-          </div>
+          </Card>
         </motion.div>
-      </div>
-    </motion.section>
+      </motion.div>
+    </SectionContainer>
   );
 };
 

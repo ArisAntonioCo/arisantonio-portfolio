@@ -10,7 +10,7 @@ This directory contains generic, reusable UI components that can be used across 
 ## Components
 
 - **Button** - Generic button component with variants
-- **CardContainer** - Reusable card container with consistent styling
+- **Card** - Reusable card container with consistent styling
 - **CustomCursor** - Custom cursor implementation
 - **ErrorBoundary** - Error handling wrapper component
 - **Headline** - Typography component for headlines
@@ -20,5 +20,5 @@ This directory contains generic, reusable UI components that can be used across 
 ## Usage
 
 ```tsx
-import { Button, CardContainer } from "@/components/ui";
+import { Button, Card } from "@/components/ui";
 ```

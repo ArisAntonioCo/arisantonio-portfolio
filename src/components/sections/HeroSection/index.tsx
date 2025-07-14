@@ -3,7 +3,7 @@
 import { motion, Variants } from "framer-motion";
 import { 
   SectionContainer, 
-  CardContainer, 
+  Card, 
   Headline,
 } from "@/components/ui";
 import {
@@ -46,7 +46,7 @@ const HeroSection = () => {
           variants={itemVariants}
         >
           {/* Main Content - 70% */}
-          <CardContainer 
+          <Card 
             className="flex-[7] grid grid-cols-2 grid-rows-2 gap-8"
           >
             {/* Top Left - Greeting */}
@@ -77,10 +77,10 @@ const HeroSection = () => {
                 {/* Space reserved for additional content */}
               </div>
             </div>
-          </CardContainer>
+          </Card>
           
           {/* Navigation Sidebar - 30% */}
-          <CardContainer
+          <Card
             className="flex-[3] flex flex-col justify-start bg-accent"
           >
             <Navigation 
@@ -89,7 +89,7 @@ const HeroSection = () => {
               showDividers={true}
               isLight={true}
             />
-          </CardContainer>
+          </Card>
         </motion.div>
       </div>
 
@@ -99,7 +99,7 @@ const HeroSection = () => {
           className="w-full"
           variants={itemVariants}
         >
-          <CardContainer
+          <Card
             className="flex flex-col h-[calc(100vh-100px)]"
           >
             {/* Mobile Header - Greeting and Clock */}
@@ -130,7 +130,7 @@ const HeroSection = () => {
                 className="opacity-60"
               />
             </div>
-          </CardContainer>
+          </Card>
         </motion.div>
       </div>
     </SectionContainer>

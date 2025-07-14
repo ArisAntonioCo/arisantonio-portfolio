@@ -3,13 +3,14 @@ import { caseStudies } from "@/data/case-studies";
 import { CaseStudyView } from "@/components/views/CaseStudyView";
 
 interface CaseStudyPageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
-export default function CaseStudyPage({ params }: CaseStudyPageProps) {
-  const caseStudy = caseStudies.find((cs) => cs.id === params.id);
+export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
+  const { id } = await params;
+  const caseStudy = caseStudies.find((cs) => cs.id === id);
 
   if (!caseStudy) {
     notFound();

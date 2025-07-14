@@ -3,7 +3,7 @@
 
 export { Badge } from "./Badge";
 export { Button } from "./Button";
-export { CardContainer } from "./CardContainer";
+export { Card } from "./Card";
 export { CustomCursor } from "./CustomCursor";
 export { ErrorBoundary } from "./ErrorBoundary";
 export { Headline } from "./Headline";
