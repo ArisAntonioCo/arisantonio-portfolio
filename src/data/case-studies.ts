@@ -3,6 +3,7 @@ import { CaseStudy } from '@/types/case-study';
 export const caseStudies: CaseStudy[] = [
   {
     id: '1',
+    slug: 'dashboard-analytics',
     name: 'Dashboard Analytics',
     roles: ['UI/UX', 'Frontend'],
     description: 'Designed and developed a comprehensive analytics dashboard for real-time data visualization and business intelligence.',
@@ -16,6 +17,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     id: '2',
+    slug: 'e-commerce-platform',
     name: 'E-Commerce Platform',
     roles: ['UI/UX', 'Design Lead'],
     description: 'Redesigned a major e-commerce platform focusing on user experience optimization.',
@@ -29,6 +31,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     id: '3',
+    slug: 'mobile-banking-app',
     name: 'Mobile Banking App',
     roles: ['Product Design', 'Frontend'],
     description: 'Created a secure and user-friendly mobile banking application with biometric authentication.',
@@ -42,6 +45,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     id: '4',
+    slug: 'real-estate-portal',
     name: 'Real Estate Portal',
     roles: ['UI/UX'],
     description: 'Developed a modern real estate platform with advanced search capabilities.',

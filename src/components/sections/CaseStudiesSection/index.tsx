@@ -40,7 +40,7 @@ const CaseStudiesSection = () => {
     >
       <motion.div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-1.5">
         {caseStudies.slice(0, 4).map((caseStudy, index) => (
-          <Link key={caseStudy.id} href={`/case-studies/${caseStudy.id}`}>
+          <Link key={caseStudy.id} href={`/case-studies/${caseStudy.slug}`}>
             <motion.div
               className="block relative overflow-hidden group cursor-pointer bg-container rounded-xl aspect-video"
               variants={itemVariants}

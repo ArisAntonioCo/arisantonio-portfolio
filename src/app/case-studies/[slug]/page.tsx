@@ -4,13 +4,13 @@ import { CaseStudyView } from "@/components/views/CaseStudyView";
 
 interface CaseStudyPageProps {
   params: Promise<{
-    id: string;
+    slug: string;
   }>;
 }
 
 export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
-  const { id } = await params;
-  const caseStudy = caseStudies.find((cs) => cs.id === id);
+  const { slug } = await params;
+  const caseStudy = caseStudies.find((cs) => cs.slug === slug);
 
   if (!caseStudy) {
     notFound();
@@ -22,6 +22,6 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
 // Generate static params for all case studies
 export async function generateStaticParams() {
   return caseStudies.map((caseStudy) => ({
-    id: caseStudy.id,
+    slug: caseStudy.slug,
   }));
 }

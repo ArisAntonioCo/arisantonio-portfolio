@@ -32,26 +32,12 @@ const CaseStudyHero = ({ caseStudy }: CaseStudyHeroProps) => {
         animate="visible"
         variants={itemVariants}
       >
-        <Card className="flex flex-col gap-8 h-full">
-          {/* Title and Category */}
-          <div className="flex flex-col gap-2">
-            <span className="text-text-secondary text-sm">{caseStudy.category}</span>
+        <Card className="grid grid-cols-2 grid-rows-2 gap-8 h-full">
+          {/* Top Left: Title and Role */}
+          <div className="flex flex-col gap-4">
             <Headline size="headline" className="max-w-3xl">
               {caseStudy.name}
             </Headline>
-          </div>
-
-          {/* Overview */}
-          <div className="flex flex-col gap-2">
-            <h2 className="text-foreground text-lg font-semibold">Overview</h2>
-            <p className="text-foreground text-base leading-relaxed max-w-3xl">
-              {caseStudy.overview}
-            </p>
-          </div>
-
-          {/* Role */}
-          <div className="flex flex-col gap-2">
-            <h3 className="text-text-secondary text-sm">Role</h3>
             <div className="flex flex-wrap gap-2">
               {caseStudy.roles.map((role, index) => (
                 <Badge key={index} variant="default" size="md">
@@ -60,6 +46,19 @@ const CaseStudyHero = ({ caseStudy }: CaseStudyHeroProps) => {
               ))}
             </div>
           </div>
+
+          {/* Top Right: Empty for now */}
+          <div></div>
+
+          {/* Bottom Left: Overview */}
+          <div className="flex items-end">
+            <Headline>
+              {caseStudy.overview}
+            </Headline>
+          </div>
+
+          {/* Bottom Right: Empty for now */}
+          <div></div>
         </Card>
       </motion.div>
     </SectionContainer>

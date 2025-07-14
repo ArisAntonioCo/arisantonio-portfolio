@@ -55,7 +55,7 @@ const CaseStudyContent = ({ caseStudy }: CaseStudyContentProps) => {
             
             {/* Content */}
             <div className="flex items-end">
-              <p className="font-normal text-sm sm:text-base text-foreground leading-relaxed">
+              <p className="font-normal text-base sm:text-lg lg:text-xl text-foreground leading-relaxed">
                 {caseStudy.problem}
               </p>
             </div>
@@ -74,7 +74,7 @@ const CaseStudyContent = ({ caseStudy }: CaseStudyContentProps) => {
             
             {/* Content */}
             <div className="flex items-end">
-              <p className="font-normal text-sm sm:text-base text-foreground leading-relaxed">
+              <p className="font-normal text-base sm:text-lg lg:text-xl text-foreground leading-relaxed">
                 {caseStudy.solution}
               </p>
             </div>
