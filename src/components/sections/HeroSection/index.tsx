@@ -16,7 +16,6 @@ const HeroSection = () => {
   const navigationItems = [
     { label: "About", href: "#about" },
     { label: "Experience", href: "#experience" },
-    { label: "Hobbies", href: "#hobbies" },
   ];
 
 
