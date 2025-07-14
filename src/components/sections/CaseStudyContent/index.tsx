@@ -45,7 +45,7 @@ const CaseStudyContent = ({ caseStudy }: CaseStudyContentProps) => {
       >
         {/* Problem Section */}
         <motion.div variants={itemVariants}>
-          <Card className="aspect-video flex flex-col justify-between p-3 sm:p-5">
+          <Card className="h-full aspect-video flex flex-col justify-between p-3 sm:p-5">
             {/* Header */}
             <div className="flex justify-between items-center">
               <h3 className="font-normal text-xs text-foreground">
@@ -64,7 +64,7 @@ const CaseStudyContent = ({ caseStudy }: CaseStudyContentProps) => {
 
         {/* Solution Section */}
         <motion.div variants={itemVariants}>
-          <Card className="aspect-video flex flex-col justify-between p-3 sm:p-5">
+          <Card className="h-full aspect-video flex flex-col justify-between p-3 sm:p-5">
             {/* Header */}
             <div className="flex justify-between items-center">
               <h3 className="font-normal text-xs text-foreground">

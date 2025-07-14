@@ -33,7 +33,7 @@ const CaseStudiesSection = () => {
 
   return (
     <motion.section 
-      className="w-full mt-1.5" 
+      className="w-full" 
       initial="hidden"
       animate="visible"
       variants={containerVariants}
