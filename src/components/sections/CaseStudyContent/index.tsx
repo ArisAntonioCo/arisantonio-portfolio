@@ -3,12 +3,25 @@
 import { motion, Variants } from "framer-motion";
 import { CaseStudy } from "@/types/case-study";
 import { SectionContainer, Card } from "@/components/ui";
+import { FontSize } from "@/components/views/CaseStudyView";
 
 interface CaseStudyContentProps {
   caseStudy: CaseStudy;
+  fontSize?: FontSize;
 }
 
-const CaseStudyContent = ({ caseStudy }: CaseStudyContentProps) => {
+const CaseStudyContent = ({ caseStudy, fontSize = 'md' }: CaseStudyContentProps) => {
+  const fontSizeClasses = {
+    xs: 'text-xs',
+    'xs-sm': 'text-xs sm:text-sm lg:text-base',
+    sm: 'text-sm sm:text-base lg:text-lg',
+    'sm-md': 'text-sm sm:text-base lg:text-lg',
+    md: 'text-base sm:text-lg lg:text-xl',
+    'md-lg': 'text-base sm:text-lg lg:text-xl',
+    lg: 'text-lg sm:text-xl lg:text-2xl',
+    'lg-xl': 'text-lg sm:text-xl lg:text-2xl',
+    xl: 'text-xl sm:text-2xl lg:text-3xl'
+  };
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
@@ -55,7 +68,7 @@ const CaseStudyContent = ({ caseStudy }: CaseStudyContentProps) => {
             
             {/* Content */}
             <div className="flex items-end">
-              <p className="font-normal text-base sm:text-lg lg:text-xl text-foreground leading-relaxed">
+              <p className={`font-normal ${fontSizeClasses[fontSize]} text-foreground leading-relaxed`}>
                 {caseStudy.problem}
               </p>
             </div>
@@ -74,7 +87,7 @@ const CaseStudyContent = ({ caseStudy }: CaseStudyContentProps) => {
             
             {/* Content */}
             <div className="flex items-end">
-              <p className="font-normal text-base sm:text-lg lg:text-xl text-foreground leading-relaxed">
+              <p className={`font-normal ${fontSizeClasses[fontSize]} text-foreground leading-relaxed`}>
                 {caseStudy.solution}
               </p>
             </div>

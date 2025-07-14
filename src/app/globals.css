@@ -7,6 +7,13 @@
   --color-text-secondary: #666666;
   --color-accent: #4800FF;
   --color-accent-hover: #3600CC;
+  --color-primary: #000000;
+  --color-secondary: #F5F5F5;
+  --color-border: #D6D6D6;
+  --color-muted-foreground: #666666;
+  --color-popover: #FFFFFF;
+  --color-popover-foreground: #000000;
+  --color-ring: #4800FF;
 }
 
 /* Base Styles */
