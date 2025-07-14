@@ -4,8 +4,6 @@
 export { Badge } from "./Badge";
 export { Button } from "./Button";
 export { Card } from "./Card";
-export { CustomCursor } from "./CustomCursor";
-export { ErrorBoundary } from "./ErrorBoundary";
 export { Headline } from "./Headline";
 export { IconButton } from "./IconButton";
 export { SectionContainer } from "./SectionContainer";

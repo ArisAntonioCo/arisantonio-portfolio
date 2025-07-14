@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
-import { ErrorBoundary } from "@/components/ui/ErrorBoundary";
 import "./globals.css";
 
 const dmSans = DM_Sans({ 
@@ -76,11 +75,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${dmSans.variable} font-sans antialiased gap-0`}>
-        <ErrorBoundary>
-          <main className="min-h-screen px-4 py-6 sm:px-8 sm:py-10 lg:px-16 lg:py-16 xl:px-24 xl:py-20">
-            {children}
-          </main>
-        </ErrorBoundary>
+        <main className="min-h-screen px-4 py-6 sm:px-8 sm:py-10 lg:px-16 lg:py-16 xl:px-24 xl:py-20">
+          {children}
+        </main>
       </body>
     </html>
   );
