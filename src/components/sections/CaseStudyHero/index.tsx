@@ -40,48 +40,51 @@ const CaseStudyHero = ({ caseStudy, fontSizeIndex, onFontSizeChange }: CaseStudy
   return (
     <SectionContainer className="flex items-start" animate={true}>
       <motion.div 
-        className="w-full h-[500px]"
+        className="w-full h-auto sm:h-[500px]"
         initial="hidden"
         animate="visible"
         variants={itemVariants}
       >
-        <Card className="grid grid-cols-2 grid-rows-2 gap-8 h-full">
-          {/* Top Left: Title and Role */}
-          <div className="flex flex-col gap-4">
-            <div className="flex items-center gap-3">
-              <h1 className="text-[36px] font-normal leading-tight text-foreground max-w-3xl">
+        <Card className="flex flex-col sm:grid sm:grid-cols-2 sm:grid-rows-2 gap-6 sm:gap-8 h-full p-4 sm:p-6 lg:p-8">
+          {/* Mobile: Stack everything vertically */}
+          {/* Desktop: Keep 2x2 grid */}
+          
+          {/* Title and Role */}
+          <div className="flex flex-col gap-3 sm:gap-4">
+            <div className="flex items-center gap-2 sm:gap-3">
+              <h1 className="text-[24px] sm:text-[36px] font-normal leading-tight text-foreground">
                 {caseStudy.name}
               </h1>
               {emojiData && (
                 <EmojiProvider data={emojiData}>
-                  <Emoji name="memo" width={36} />
+                  <Emoji name="memo" width={24} className="sm:w-9" />
                 </EmojiProvider>
               )}
             </div>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-1.5 sm:gap-2">
               {caseStudy.roles.map((role, index) => (
-                <Badge key={index} variant="default" size="md">
+                <Badge key={index} variant="default" size="sm" className="sm:text-base">
                   {role}
                 </Badge>
               ))}
             </div>
           </div>
 
-          {/* Top Right: Empty for now */}
-          <div></div>
+          {/* Top Right: Empty on desktop, hidden on mobile */}
+          <div className="hidden sm:block"></div>
 
-          {/* Bottom Left: Overview */}
+          {/* Overview */}
           <div className="flex items-end">
-            <div className="flex flex-col gap-2">
-              <h3 className="text-text-secondary text-sm">Overview</h3>
-              <Headline>
+            <div className="flex flex-col gap-1.5 sm:gap-2 w-full">
+              <h3 className="text-text-secondary text-xs sm:text-sm">Overview</h3>
+              <Headline size="sm" className="sm:text-[26px]">
                 {caseStudy.overview}
               </Headline>
             </div>
           </div>
 
-          {/* Bottom Right: Font Size Control */}
-          <div className="flex items-end justify-end">
+          {/* Font Size Control */}
+          <div className="flex items-end justify-start sm:justify-end">
             <FontSizeControl 
               value={fontSizeIndex}
               onChange={onFontSizeChange}

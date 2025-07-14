@@ -20,9 +20,9 @@ export const FontSizeControl = ({ value, onChange }: FontSizeControlProps) => {
   const ticks = [...Array(max + 1)].map((_, i) => i);
 
   return (
-    <div className="flex flex-col gap-2 bg-background/80 backdrop-blur-sm p-4 rounded-lg border border-border">
+    <div className="flex flex-col gap-2 bg-background/80 backdrop-blur-sm p-3 sm:p-4 rounded-lg border border-border">
       <Label className="text-xs whitespace-nowrap">Font Size</Label>
-      <div className="w-48">
+      <div className="w-36 sm:w-48">
         <div>
           <Slider
             value={[value]}
@@ -33,7 +33,7 @@ export const FontSizeControl = ({ value, onChange }: FontSizeControlProps) => {
             aria-label="Font size"
           />
           <span
-            className="mt-3 flex w-full items-center justify-between gap-1 px-2.5 text-xs font-medium text-muted-foreground"
+            className="mt-2 sm:mt-3 flex w-full items-center justify-between gap-0.5 sm:gap-1 px-1.5 sm:px-2.5 text-[10px] sm:text-xs font-medium text-muted-foreground"
             aria-hidden="true"
           >
             {ticks.map((_, i) => (
