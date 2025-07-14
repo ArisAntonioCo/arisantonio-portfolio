@@ -72,9 +72,12 @@ const CaseStudyHero = ({ caseStudy, fontSizeIndex, onFontSizeChange }: CaseStudy
 
           {/* Bottom Left: Overview */}
           <div className="flex items-end">
-            <Headline>
-              {caseStudy.overview}
-            </Headline>
+            <div className="flex flex-col gap-2">
+              <h3 className="text-text-secondary text-sm">Overview</h3>
+              <Headline>
+                {caseStudy.overview}
+              </Headline>
+            </div>
           </div>
 
           {/* Bottom Right: Font Size Control */}

@@ -73,8 +73,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className={`${dmSans.variable} font-sans antialiased gap-0`}>
+    <html lang="en" className="scroll-smooth scrollbar">
+      <body className={`${dmSans.variable} font-sans antialiased gap-0 scrollbar`}>
         <main className="min-h-screen px-4 py-6 sm:px-8 sm:py-10 lg:px-16 lg:py-16 xl:px-24 xl:py-20">
           {children}
         </main>
